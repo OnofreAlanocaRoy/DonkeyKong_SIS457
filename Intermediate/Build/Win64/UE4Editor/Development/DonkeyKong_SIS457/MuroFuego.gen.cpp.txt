@@ -1,0 +1,7 @@
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
+C:\unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457/MuroFuego.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Muro.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Muro.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroFuego.generated.h

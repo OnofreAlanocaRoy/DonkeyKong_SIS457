@@ -1,0 +1,9 @@
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\NaveEnemiga.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\NaveEnemiga.generated.h
+C:\unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
+C:\unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
+C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
+C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Proyectil.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Proyectil.generated.h
