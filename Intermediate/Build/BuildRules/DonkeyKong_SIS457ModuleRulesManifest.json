@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\unreal\\juego\\DonkeyKong_SIS457\\Source\\DonkeyKong_SIS457\\DonkeyKong_SIS457.Build.cs",
+		"C:\\unreal\\juego\\DonkeyKong_SIS457\\Source\\DonkeyKong_SIS457.Target.cs",
+		"C:\\unreal\\juego\\DonkeyKong_SIS457\\Source\\DonkeyKong_SIS457Editor.Target.cs"
+	],
+	"EngineVersion": "4.27.2"
+}
