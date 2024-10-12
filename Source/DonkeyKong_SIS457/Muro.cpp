@@ -1,6 +1,7 @@
 #include "Muro.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/StaticMesh.h"
+#include "Components/StaticMeshComponent.h"
 
 // Sets default values
 AMuro::AMuro()

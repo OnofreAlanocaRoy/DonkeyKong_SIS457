@@ -7,7 +7,7 @@ class AObtaculo;
 class AComponentePlataforma;
 class ADonkeyKong_SIS457Character;
 class ABarril;
-
+class AMuro;
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
 {
@@ -17,20 +17,20 @@ public:
 
 	ADonkeyKong_SIS457GameMode();
 	ADonkeyKong_SIS457Character* player01;
-	TArray<AComponentePlataforma*> ComponentesPlataforma;
+
 	TArray<ABarril*> Barriles;
 
 protected:
 	virtual void BeginPlay() override;
+	TArray<int32> aComponentesPlataformaMoviles;
+	TArray<AMuro*> aMuros;
 private:
-	FTimerHandle PlatformSpawnTimerHandle;
+
 	FTimerHandle SpawnBarrilTimerHandle;
 	void SpawnBarril();
 	//void DestruirPlataforma();
 	int32 contadorBarriles;
 	const int32 numeroMaximoBarriles = 10;
-	FVector Plataforma2Location;
-	FVector Plataforma4Location;
 	void SpawnNaveEnemiga();
 	void SpawnMurosAleatorios();
 

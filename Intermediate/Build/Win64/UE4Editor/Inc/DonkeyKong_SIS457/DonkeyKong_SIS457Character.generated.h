@@ -16,13 +16,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_14_SPARSE_DATA
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_14_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execIsAlive); \
 	DECLARE_FUNCTION(execFire);
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execIsAlive); \
 	DECLARE_FUNCTION(execFire);
 
 
@@ -70,7 +68,10 @@ public: \
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SideViewCameraComponent() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, SideViewCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, CameraBoom); }
+	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, CameraBoom); } \
+	FORCEINLINE static uint32 __PPO__FirstPersonCamera() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, FirstPersonCamera); } \
+	FORCEINLINE static uint32 __PPO__ThirdPersonCamera() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, ThirdPersonCamera); } \
+	FORCEINLINE static uint32 __PPO__bIsFirstPerson() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, bIsFirstPerson); }
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_11_PROLOG

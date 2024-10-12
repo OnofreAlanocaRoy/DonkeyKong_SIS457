@@ -13,8 +13,14 @@ UCLASS()
 class DONKEYKONG_SIS457_API AMuroFuego : public AMuro
 {
 	GENERATED_BODY()
+	UParticleSystemComponent* ParticleSystem;
 public:
 	AMuroFuego();
 
 	virtual void OnCharacterImpact(AActor* CharacterActor) override;  // Sobrescribir comportamiento
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	virtual void ejercerAccion() override;
 };

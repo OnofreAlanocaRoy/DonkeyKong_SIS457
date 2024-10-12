@@ -22,8 +22,7 @@ public:
 	AProyectil();
 	UFUNCTION()
 	void SetDireccionDisparo(FVector Direccion);
-	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
+	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 	/** Returns ProjectileMesh subobject **/
 	FORCEINLINE UStaticMeshComponent* GetProjectilMesh() const { return ProjectilMesh; }
 	/** Returns ProjectileMovement subobject **/

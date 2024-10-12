@@ -1,7 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
 #include "ComponentePlataforma.h"
-#include "Components/StaticMeshComponent.h"
-// Sets default values
+
 AComponentePlataforma::AComponentePlataforma()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -12,9 +11,24 @@ AComponentePlataforma::AComponentePlataforma()
 	meshPlataforma->SetStaticMesh(MeshAsset.Object);
 	RootComponent = meshPlataforma;
 
-	FVector NewScale(2.0f, 6.0f, 0.5f); // Cambia estos valores según tus necesidades, forma y tamaño de la plataforma
+	FVector NewScale(2.0f, 3.0f, 0.5f); // Cambia estos valores según tus necesidades
 	SetActorScale3D(NewScale);
+	bMoverHorizontalmente = false;
+	bMoverVerticalmente = false;
+	bDetener = false;
 
+	posicionInicio = FVector(0.0f, 0.0f, 0.0f);
+	posicionFinal = FVector(0.0f, 0.0f, 0.0f);
+	velocidad = 2.0f;
+	anchoComponentePlataforma = 300.0f;
+	altoComponentePlataforma = 50.0f;
+	fondoComponentePlataforma = 200.0f;
+
+	desplazamientoComponentePlataforma = FVector(0.0f, 1.0f, 1.0f);
+
+	posicionActual = FVector(0.0f, 0.0f, 0.0f);
+	posicionInicio = FVector(0.0f, 0.0f, 0.0f);
+	posicionFinal = FVector(0.0f, 0.0f, 0.0f);
 
 }
 
@@ -22,65 +36,64 @@ AComponentePlataforma::AComponentePlataforma()
 void AComponentePlataforma::BeginPlay()
 {
 	Super::BeginPlay();
-	InitialPosition = GetActorLocation();
+
+	posicionActual = GetActorLocation();
+	posicionInicio = FVector(posicionActual.X - desplazamientoComponentePlataforma.X, posicionActual.Y - anchoComponentePlataforma - desplazamientoComponentePlataforma.Y, posicionActual.Z - altoComponentePlataforma * 5 - desplazamientoComponentePlataforma.Z);
+	posicionFinal = FVector(posicionActual.X + desplazamientoComponentePlataforma.X, posicionActual.Y + anchoComponentePlataforma + desplazamientoComponentePlataforma.Y, posicionActual.Z + altoComponentePlataforma * 5 + desplazamientoComponentePlataforma.Z);
+	incrementoZ = 2.0f;
+
+	bDeIzquierdaADerecha = true;
+	bDeArribaAAbajo = true;
+	dDeAdelanteAAtras = true;
 }
+
 // Called every frame
 void AComponentePlataforma::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (bIsDualOscillation) {
-		OscillationTime += DeltaTime * OscillationSpeed;
-		float SinWaveX = FMath::Sin(OscillationTime);
-		float SinWaveZ = FMath::Sin(OscillationTime);
-		FVector NewPosition = InitialPosition;
-		NewPosition.X += SinWaveX * HorizontalOscillationRange; // Movimiento horizontal
-		NewPosition.Z += SinWaveZ * VerticalOscillationRange; // Movimiento vertical
-		SetActorLocation(NewPosition);
+	if (!bDetener) {
+		if (bMoverVerticalmente)
+		{
+			if (bDeArribaAAbajo)
+			{
+				posicionActual.Z += desplazamientoComponentePlataforma.Z * velocidad;
+				if (posicionActual.Z > posicionFinal.Z)
+				{
+					bDeArribaAAbajo = false;
+				}
+			}
+			else
+			{
+				posicionActual.Z -= desplazamientoComponentePlataforma.Z * velocidad;
+				if (posicionActual.Z < posicionInicio.Z)
+				{
+					bDeArribaAAbajo = true;
+				}
+			}
+
+		}
+
+		if (bMoverHorizontalmente)
+		{
+			if (bDeIzquierdaADerecha)
+			{
+				posicionActual.Y += desplazamientoComponentePlataforma.Y * velocidad;
+				if (posicionActual.Y > posicionFinal.Y)
+				{
+					bDeIzquierdaADerecha = false;
+				}
+			}
+			else
+			{
+				posicionActual.Y -= desplazamientoComponentePlataforma.Y * velocidad;
+				if (posicionActual.Y < posicionInicio.Y)
+				{
+					bDeIzquierdaADerecha = true;
+				}
+			}
+		}
 	}
 
-	if (OscillationRange > 0.0f && OscillationSpeed > 0.0f)
-	{
-		OscillationTime += DeltaTime * OscillationSpeed;
-		float SinWave = FMath::Sin(OscillationTime);
-		FVector NewPosition = InitialPosition + OscillationDirection * SinWave * OscillationRange;
-		SetActorLocation(NewPosition);
-	}
-	if (bIsVerticalOscillation)
-	{
-		OscillationTime += DeltaTime * VerticalOscillationSpeed;
-		float SinWave = FMath::Sin(OscillationTime);
-		FVector NewPosition = InitialPosition;
-		NewPosition.Z += SinWave * VerticalOscillationRange;
-		SetActorLocation(NewPosition);
-	}
-}
-
-void AComponentePlataforma::DestruirPlataforma()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Plataforma destruida"));
-	Destroy();
-}
-
-void AComponentePlataforma::StartOscillation(float InOscillationRange, float InOscillationSpeed)
-{
-	OscillationRange = InOscillationRange;
-	OscillationSpeed = InOscillationSpeed;
-	OscillationDirection = FVector(0.0f, 1.0f, 0.0f); // Movimiento en el eje y
-	OscillationTime = 0.0f;
-}
-
-void AComponentePlataforma::StartVerticalOscillation(float InOscillationRange, float InOscillationSpeed)
-{
-	VerticalOscillationRange = InOscillationRange;
-	VerticalOscillationSpeed = InOscillationSpeed;
-	bIsVerticalOscillation = true;
-	OscillationTime = 0.0f;
-}
-void AComponentePlataforma::StartDualOscillation(float InHorizontalRange, float InVerticalRange, float InOscillationSpeed) {
-	HorizontalOscillationRange = InHorizontalRange;
-	VerticalOscillationRange = InVerticalRange;
-	OscillationSpeed = InOscillationSpeed;
-	OscillationTime = 0.0f;
-	bIsDualOscillation = true; // Asegúrate de que esta variable esté definida
+	SetActorLocation(posicionActual);
 }

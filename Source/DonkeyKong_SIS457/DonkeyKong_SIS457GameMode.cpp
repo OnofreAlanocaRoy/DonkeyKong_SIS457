@@ -10,6 +10,12 @@
 #include "Barril.h"
 #include "NaveEnemiga.h"
 #include "Muro.h"
+#include "MuroElectrico.h"
+#include "MuroPegajodo.h"
+#include "MuroLadrillo.h"
+#include "MuroCongelado.h"
+#include "Inventario.h"
+#include "MuroFuego.h"
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -21,20 +27,26 @@ ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 	}
 	//quiero implementar un nuevo acto NaveEnemiga
 }
+TArray<FVector> GenerarPosicionesAleatorias(int32 NumeroPosiciones, FVector RangoMin, FVector RangoMax)
+{
+	TArray<FVector> PosicionesAleatorias;
 
+	for (int32 i = 0; i < NumeroPosiciones; ++i)
+	{
+		float X = FMath::RandRange(RangoMin.X, RangoMax.X);
+		float Y = FMath::RandRange(RangoMin.Y, RangoMax.Y);
+		float Z = FMath::RandRange(RangoMin.Z, RangoMax.Z);
+
+		PosicionesAleatorias.Add(FVector(X, Y, Z));
+	}
+
+	return PosicionesAleatorias;
+}
 void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 {
 	Super::BeginPlay();
-	// Código para eliminar las plataformas específicas
-	for (AComponentePlataforma* Plataforma : ComponentesPlataforma)
-	{
-		if (Plataforma)
-		{
-			// Llama al método DestruirPlataforma para eliminar la plataforma
-			Plataforma->DestruirPlataforma();
-		}
-	}
+
 	if (GetWorld())
 	{
 		FActorSpawnParameters SpawnParams;
@@ -96,64 +108,102 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	//spawnear de plataforma
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("-----para disparo tecla R y las fechas (<-  ->)"));
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("plataforma aleatorias con Tarray diferente posiciones"));
+	// Generar posiciones aleatorias para las plataformas
 
-	FVector posicionInicial = FVector(1160.0f, -1100.0f, 400.f);
+	for (int32 i = 0; i < 5; ++i) {
+		aComponentesPlataformaMoviles.Add(FMath::RandRange(2, 7)); // NUMERO ALEATORIO 2,7 MOVIL
+	}
+
+	FVector posicionInicial = FVector(1160.0f, -1300.0f, 500.f);
 	FRotator rotacionInicial = FRotator(0.0f, 0.0f, 10.0f);
 	FTransform SpawnLocationCP;
-	float anchoComponentePlataforma = 600.0f;
-	float incrementoAltoComponentePlataforma = -105.0f;
-	float incrementoAltoEntrePisos = 1400.0f;
-	float incrementoInicioPiso = 400.0f;
-	// Vector para almacenar las plataformas
+	float anchoComponentePlataforma = 300.0f;
 
+	float incrementoAltoComponentePlataforma = 55.0f;
+	float incrementoAltoEntrePisos = 500.0f;
+	float incrementoInicioPiso = 200.0f;
+	float incrementoAnchoComponentePlataforma = -300.0f;
+	int numeroPisoComponentePlataformaMovil = 0;
+	int numeroComponentePlataformaMovil = 4;
+
+	// Aquí añadimos el desplazamiento aleatorio para cada fila VARIABLE
+	FVector desplazamientoAleatorio;
+	float maxDesplazamientoZ = 300.0f; // EJE Z
+	float maxDesplazamientoY = -1000.0f; // EJE Y
+
+	// npp -> Número bucle genera 5 filas (pisos) 
 	for (int npp = 0; npp < 5; npp++) {
+		// desplazamiento aleatorio en las coordenadas Y y Z rango per
+		desplazamientoAleatorio.Z = FMath::RandRange(-maxDesplazamientoZ, maxDesplazamientoZ);
+		desplazamientoAleatorio.Y = FMath::RandRange(-maxDesplazamientoY, maxDesplazamientoY);
+		// Aplicamos el desplazamiento a la posición inicial
+		posicionInicial.X += desplazamientoAleatorio.X;
+		posicionInicial.Y += desplazamientoAleatorio.Y;
+
 		rotacionInicial.Roll = rotacionInicial.Roll * -1;
-		incrementoAltoComponentePlataforma = incrementoAltoComponentePlataforma * -1;
 		incrementoInicioPiso = incrementoInicioPiso * -1;
+		incrementoAnchoComponentePlataforma = incrementoAnchoComponentePlataforma * -1;
 		SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
-		// Variables de oscilación
-		float OscillationRange = 50.0f;
-		float OscillationSpeed = 1.0f;
+		SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
+		// buble 10 COMPONENTES
 		for (int ncp = 0; ncp < 10; ncp++) {
 
-			if (npp == 0 && (ncp == 1 || ncp == 3 || ncp == 5 || ncp == 7 || ncp == 9)) {
-				continue;
-				// No generar estas plataformas en la primera fila
+			if (ncp != (aComponentesPlataformaMoviles[npp] - 1) && ncp != (aComponentesPlataformaMoviles[npp] + 1)) {
+				AComponentePlataforma* cp = GetWorld()->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP);
+				if (ncp == aComponentesPlataformaMoviles[npp]) {
+					if (FMath::RandRange(0, 1))
+						cp->setbMoverHorizontalmente(true);
+					else
+						cp->setbMoverVerticalmente(true);
+				}
+			}
+			posicionInicial.Z = posicionInicial.Z + incrementoAltoComponentePlataforma;
+			if (ncp < 9) {
+				posicionInicial.Y = posicionInicial.Y + incrementoAnchoComponentePlataforma;
 			}
 
-			SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y + anchoComponentePlataforma * ncp, posicionInicial.Z));
-			AComponentePlataforma* Plataforma = GetWorld()->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP);
-			if (npp == 1) { // Segunda fila
-				if (Plataforma) {
-					Plataforma->StartOscillation(500.0f, 2.0f); // Ajusta el rango y la velocidad de la oscilación
-				}
-			}
-			else if (npp == 3) // Cuarta Fila
-			{
-				if (ncp == 1 || ncp == 3 || ncp == 5 || ncp == 7 || ncp == 9) // Oscilar las plataformas 2 y 4 en el eje Z
-				{
-					Plataforma->StartVerticalOscillation(200.0f, 1.0f); // Oscilación de 50.0f en el eje Z
-				}
-			}
-			else if (npp == 4 && (ncp == 1 || ncp == 3))
-				continue; { // Fila 5, Componente 3
-				if (ncp == 2) {
-					Plataforma->StartDualOscillation(200.0f, 1.0f, 1.0f); // Ajusta el rango y la velocidad para movimiento dual
-				}
-			}
-			if (ncp < 9) {
-				posicionInicial.Z = posicionInicial.Z + incrementoAltoComponentePlataforma;
-			}
+			SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
 		}
 
 		posicionInicial.Z = posicionInicial.Z + incrementoAltoEntrePisos;
 		posicionInicial.Y = posicionInicial.Y + incrementoInicioPiso;
 
-		GetWorld()->GetTimerManager().SetTimer(SpawnBarrilTimerHandle, this, &ADonkeyKong_SIS457GameMode::SpawnBarril, 5.0f, true);
+		// Restauramos la posición inicial después de spawnear la fila, para que no acumule el desplazamiento de la siguiente fila
+		posicionInicial.X -= desplazamientoAleatorio.X;
+		posicionInicial.Y -= desplazamientoAleatorio.Y;
 	}
 
+	//spawnear muros
+	FVector posicionMuro = FVector(1160.0f, 0.0f, 200.f);
+	FRotator rotacionMuro = FRotator(0.0f, 0.0f, 10.0f);
+	FTransform SpawnLocationMuro;
+	SpawnLocationMuro.SetRotation(FQuat(rotacionMuro));
+	SpawnLocationMuro.SetLocation(posicionMuro);
 
-	SpawnNaveEnemiga(); // Llamar al método para spawnear la nave enemiga
+	AMuroElectrico* me01 = GetWorld()->SpawnActor<AMuroElectrico>(AMuroElectrico::StaticClass(), SpawnLocationMuro);
+	aMuros.Add(me01);
+	posicionMuro.Y = 300.0f;
+	SpawnLocationMuro.SetLocation(posicionMuro);
+
+	AMuroPegajodo* me02 = GetWorld()->SpawnActor<AMuroPegajodo>(AMuroPegajodo::StaticClass(), SpawnLocationMuro);
+	aMuros.Add(me02);
+	posicionMuro.Y = 500.0f;
+	SpawnLocationMuro.SetLocation(posicionMuro);
+
+	AMuroLadrillo* me03 = GetWorld()->SpawnActor<AMuroLadrillo>(AMuroLadrillo::StaticClass(), SpawnLocationMuro);
+	aMuros.Add(me03);
+	posicionMuro.Y = 600.0f;
+	SpawnLocationMuro.SetLocation(posicionMuro);
+	
+	AMuroFuego* me04 = GetWorld()->SpawnActor<AMuroFuego>(AMuroFuego::StaticClass(), SpawnLocationMuro);
+	aMuros.Add(me04);
+	posicionMuro.Y = 800.0f;
+	SpawnLocationMuro.SetLocation(posicionMuro);
+
+
+	GetWorld()->GetTimerManager().SetTimer(SpawnBarrilTimerHandle, this, &ADonkeyKong_SIS457GameMode::SpawnBarril, 3.0f, true);
+	// Llamar al método para spawnear la nave enemiga (cono disparador)
+	SpawnNaveEnemiga(); 
 }
 
 //nave enemiga o el cono de fuego
@@ -180,9 +230,9 @@ void ADonkeyKong_SIS457GameMode::SpawnBarril()
 	if (contadorBarriles < numeroMaximoBarriles) {
 		//Spawn de un objeto barril en la escena sobre la primera plataforma
 		FTransform SpawnLocationBarril;
-		SpawnLocationBarril.SetLocation(FVector(1190.0f, 1300.0f, 4085.0f));
+		SpawnLocationBarril.SetLocation(FVector(1160.0f, 900.0f, 860.0f));
 		SpawnLocationBarril.SetRotation(FQuat(FRotator(90.0f, 0.0f, 0.0f)));
-
+		//ABarril* barril01 = GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocationBarril);
 		Barriles.Add(GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocationBarril));
 		contadorBarriles++;
 
@@ -193,20 +243,20 @@ void ADonkeyKong_SIS457GameMode::SpawnBarril()
 }
 void ADonkeyKong_SIS457GameMode::SpawnMurosAleatorios()
 {
-	for (AComponentePlataforma* Plataforma : ComponentesPlataforma)
-	{
-		if (Plataforma)
-		{
-			FVector PlataformaLocation = Plataforma->GetActorLocation();
-			FVector MuroSpawnLocation = PlataformaLocation + FVector(0, 0, 200.0f); // Ajusta la altura
-			FRotator MuroRotation = FRotator::ZeroRotator;
+	//for (AComponentePlataforma* Plataforma : ComponentesPlataforma)
+	//{
+	//	if (Plataforma)
+	//	{
+	//		FVector PlataformaLocation = Plataforma->GetActorLocation();
+	//		FVector MuroSpawnLocation = PlataformaLocation + FVector(0, 0, 200.0f); // Ajusta la altura
+	//		FRotator MuroRotation = FRotator::ZeroRotator;
 
-			// Spawnear el muro sobre la plataforma
-			AMuro* Muro = GetWorld()->SpawnActor<AMuro>(AMuro::StaticClass(), MuroSpawnLocation, MuroRotation);
-			if (Muro)
-			{
-				// Aquí puedes ajustar la escala, rotación o comportamiento del muro si es necesario
-			}
-		}
-	}
+	//		// Spawnear el muro sobre la plataforma
+	//		AMuro* Muro = GetWorld()->SpawnActor<AMuro>(AMuro::StaticClass(), MuroSpawnLocation, MuroRotation);
+	//		if (Muro)
+	//		{
+	//			// Aquí puedes ajustar la escala, rotación o comportamiento del muro si es necesario
+	//		}
+	//	}
+	//}
 }
