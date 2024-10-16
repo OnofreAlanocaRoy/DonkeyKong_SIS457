@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeMuroLadrillo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMuroLadrillo, 3060596690);
+	IMPLEMENT_CLASS(AMuroLadrillo, 3259824740);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AMuroLadrillo>()
 	{
 		return AMuroLadrillo::StaticClass();

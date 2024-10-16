@@ -11,6 +11,10 @@ class DONKEYKONG_SIS457_API AMuroCongelado : public AMuro
 
 public:
     AMuroCongelado();
+    UFUNCTION()
+   void OnCharacterImpact(AActor* OtherActor);
 
-    virtual void OnCharacterImpact(AActor* CharacterActor) override;  // Sobrescribir comportamiento
+    virtual void Tick(float DeltaTime) override;
+
+    virtual void ejercerAccion() override;
 };

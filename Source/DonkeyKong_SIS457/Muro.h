@@ -4,27 +4,33 @@
 #include "GameFramework/Actor.h"
 #include "Muro.generated.h"
 
-UCLASS(Abstract)
+class UStaticMeshComponent;
+//class AMuro;
+
+UCLASS()
 class DONKEYKONG_SIS457_API AMuro : public AActor
 {
 	GENERATED_BODY()
+
 public:
 	// Sets default values for this actor's properties
 	AMuro();
-	// Variable para la escala del muro
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Muro")
-	FVector MuroScale;
-
-	// Método para establecer la escala del muro
-	void SetMuroScale(FVector NewScale);
 
 protected:
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;	// Malla estática del muro
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Muro")
+	virtual void BeginPlay() override;
+
 	UStaticMeshComponent* MuroMesh;
+
+	FString tipoMuro;
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	virtual void OnCharacterImpact(AActor* CharacterActor);
+	//virtual void ejercerAccion() = 0;
+	virtual void ejercerAccion() PURE_VIRTUAL(AMuro::ejercerAccion, );
+	//virtual void ejercerAccion() = 0;
+	//PURE_VIRUAL(AMuro::ejercerAccion, );
+
+	static AMuro* getMuro(FString _tipoMuro);
 };

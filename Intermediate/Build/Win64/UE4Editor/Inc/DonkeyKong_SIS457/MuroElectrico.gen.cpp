@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeMuroElectrico() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMuroElectrico, 157413428);
+	IMPLEMENT_CLASS(AMuroElectrico, 2514877480);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AMuroElectrico>()
 	{
 		return AMuroElectrico::StaticClass();

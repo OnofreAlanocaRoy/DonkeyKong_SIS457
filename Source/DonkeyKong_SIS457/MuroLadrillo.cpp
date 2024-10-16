@@ -1,20 +1,43 @@
+
 #include "MuroLadrillo.h"
 #include "UObject/ConstructorHelpers.h"
-#include "Engine/StaticMesh.h"
+#include "Components/StaticMeshComponent.h"
+#include "Particles/ParticleSystemComponent.h"
+
+void AMuroLadrillo::BeginPlay()
+{
+	Super::BeginPlay();
+}
 
 AMuroLadrillo::AMuroLadrillo()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	ConstructorHelpers::FObjectFinder<UStaticMesh> mesh(TEXT("StaticMesh'/Game/StarterContent/Architecture/Wall_400x200.Wall_400x200'"));
-	// Crear el componente de malla estática
-	MuroMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("NaveMesh"));
-	MuroMesh->SetStaticMesh(mesh.Object);
-	RootComponent = MuroMesh;
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MuroLadrilloAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+	if (MuroLadrilloAsset.Succeeded())
+	{
+		MuroMesh->SetStaticMesh(MuroLadrilloAsset.Object);
+	}
+
+	static ConstructorHelpers::FObjectFinder<UMaterial> MaterialAsset(TEXT("Material'/Game/StarterContent/Materials/M_Brick_Clay_New.M_Brick_Clay_New'"));
+	if (MaterialAsset.Succeeded())
+	{
+		MuroMesh->SetMaterial(0, MaterialAsset.Object);
+	}
+
+	ParticleSystem = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystem"));
+	ParticleSystem->SetupAttachment(RootComponent);
+
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleSystemAsset(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
+	if (ParticleSystemAsset.Succeeded())
+	{
+		ParticleSystem->SetTemplate(ParticleSystemAsset.Object);
+	}
 }
 
-void AMuroLadrillo::OnCharacterImpact(AActor* CharacterActor)
+void AMuroLadrillo::Tick(float DeltaTime)
 {
-	// Implementar el comportamiento específico del muro de ladrillo (ej: daño por impacto)
-	UE_LOG(LogTemp, Warning, TEXT("El personaje ha sido golpeado por un ladrillo!"));
+	Super::Tick(DeltaTime);
+}
 
+void AMuroLadrillo::ejercerAccion()
+{
 }

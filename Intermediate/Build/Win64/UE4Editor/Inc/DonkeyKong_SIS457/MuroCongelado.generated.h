@@ -8,14 +8,23 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef DONKEYKONG_SIS457_MuroCongelado_generated_h
 #error "MuroCongelado.generated.h already included, missing '#pragma once' in MuroCongelado.h"
 #endif
 #define DONKEYKONG_SIS457_MuroCongelado_generated_h
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_MuroCongelado_h_10_SPARSE_DATA
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_MuroCongelado_h_10_RPC_WRAPPERS
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_MuroCongelado_h_10_RPC_WRAPPERS_NO_PURE_DECLS
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_MuroCongelado_h_10_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnCharacterImpact);
+
+
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_MuroCongelado_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnCharacterImpact);
+
+
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_MuroCongelado_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMuroCongelado(); \

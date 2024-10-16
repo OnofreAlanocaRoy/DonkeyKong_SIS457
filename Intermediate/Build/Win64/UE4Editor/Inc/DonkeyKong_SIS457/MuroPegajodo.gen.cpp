@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeMuroPegajodo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMuroPegajodo, 2694800301);
+	IMPLEMENT_CLASS(AMuroPegajodo, 246981880);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AMuroPegajodo>()
 	{
 		return AMuroPegajodo::StaticClass();

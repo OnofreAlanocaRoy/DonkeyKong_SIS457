@@ -17,8 +17,6 @@ void EmptyLinkFunctionForGeneratedCodeMuro() {}
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_AMuro();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_DonkeyKong_SIS457();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void AMuro::StaticRegisterNativesAMuro()
 	{
@@ -33,15 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeMuro() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MuroScale_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_MuroScale;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MuroMesh_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MuroMesh;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -51,33 +40,12 @@ void EmptyLinkFunctionForGeneratedCodeMuro() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMuro_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "//class AMuro;\n" },
 		{ "IncludePath", "Muro.h" },
 		{ "ModuleRelativePath", "Muro.h" },
+		{ "ToolTip", "class AMuro;" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMuro_Statics::NewProp_MuroScale_MetaData[] = {
-		{ "Category", "Muro" },
-		{ "Comment", "// Variable para la escala del muro\n" },
-		{ "ModuleRelativePath", "Muro.h" },
-		{ "ToolTip", "Variable para la escala del muro" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMuro_Statics::NewProp_MuroScale = { "MuroScale", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMuro, MuroScale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AMuro_Statics::NewProp_MuroScale_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMuro_Statics::NewProp_MuroScale_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMuro_Statics::NewProp_MuroMesh_MetaData[] = {
-		{ "Category", "Muro" },
-		{ "Comment", "// Malla est?tica del muro\n" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Muro.h" },
-		{ "ToolTip", "Malla est?tica del muro" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMuro_Statics::NewProp_MuroMesh = { "MuroMesh", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMuro, MuroMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMuro_Statics::NewProp_MuroMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMuro_Statics::NewProp_MuroMesh_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMuro_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMuro_Statics::NewProp_MuroScale,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMuro_Statics::NewProp_MuroMesh,
-	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMuro_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMuro>::IsAbstract,
 	};
@@ -87,13 +55,13 @@ void EmptyLinkFunctionForGeneratedCodeMuro() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		Z_Construct_UClass_AMuro_Statics::PropPointers,
+		nullptr,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		UE_ARRAY_COUNT(Z_Construct_UClass_AMuro_Statics::PropPointers),
 		0,
-		0x009000A5u,
+		0,
+		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AMuro_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AMuro_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_AMuro()
@@ -105,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeMuro() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMuro, 1994664623);
+	IMPLEMENT_CLASS(AMuro, 3120562035);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AMuro>()
 	{
 		return AMuro::StaticClass();

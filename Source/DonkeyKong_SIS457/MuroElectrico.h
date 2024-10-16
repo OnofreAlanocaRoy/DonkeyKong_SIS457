@@ -4,13 +4,25 @@
 #include "Muro.h"
 #include "MuroElectrico.generated.h"
 
+/**
+ *
+ */
+class ParticleSystemComponent;
+
 UCLASS()
 class DONKEYKONG_SIS457_API AMuroElectrico : public AMuro
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
+protected:
+	int32 nivelCargaElectrica;
+	UParticleSystemComponent* ParticleSystem;
 public:
-    AMuroElectrico();
+	AMuroElectrico();
 
-    virtual void OnCharacterImpact(AActor* CharacterActor) override;  // Sobrescribir comportamiento
+	virtual void ejercerAccion() override;
+
+	virtual void descargarElectricidad();
+	virtual void cargarElectricidad();
+
 };

@@ -40,6 +40,7 @@ AProyectil::AProyectil()
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 2.0f;
+	GunOffset = FVector(90.f, 0.f, 0.f);
 }
 
 void AProyectil::SetDireccionDisparo(FVector Direccion)

@@ -31,11 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeComponentePlataforma() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PlataformaID_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_PlataformaID;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -49,16 +44,6 @@ void EmptyLinkFunctionForGeneratedCodeComponentePlataforma() {}
 		{ "ModuleRelativePath", "ComponentePlataforma.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AComponentePlataforma_Statics::NewProp_PlataformaID_MetaData[] = {
-		{ "Category", "Platform" },
-		{ "ModuleRelativePath", "ComponentePlataforma.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AComponentePlataforma_Statics::NewProp_PlataformaID = { "PlataformaID", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AComponentePlataforma, PlataformaID), METADATA_PARAMS(Z_Construct_UClass_AComponentePlataforma_Statics::NewProp_PlataformaID_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AComponentePlataforma_Statics::NewProp_PlataformaID_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AComponentePlataforma_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AComponentePlataforma_Statics::NewProp_PlataformaID,
-	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AComponentePlataforma_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AComponentePlataforma>::IsAbstract,
 	};
@@ -68,11 +53,11 @@ void EmptyLinkFunctionForGeneratedCodeComponentePlataforma() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		Z_Construct_UClass_AComponentePlataforma_Statics::PropPointers,
+		nullptr,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		UE_ARRAY_COUNT(Z_Construct_UClass_AComponentePlataforma_Statics::PropPointers),
+		0,
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AComponentePlataforma_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AComponentePlataforma_Statics::Class_MetaDataParams))
@@ -86,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeComponentePlataforma() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AComponentePlataforma, 2053001792);
+	IMPLEMENT_CLASS(AComponentePlataforma, 1239955202);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AComponentePlataforma>()
 	{
 		return AComponentePlataforma::StaticClass();

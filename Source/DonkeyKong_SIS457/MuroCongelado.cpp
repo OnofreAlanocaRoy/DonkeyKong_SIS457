@@ -11,6 +11,12 @@ AMuroCongelado::AMuroCongelado()
 	MuroMesh->SetStaticMesh(mesh.Object);
 	RootComponent = MuroMesh;
 }
+void AMuroCongelado::Tick(float DeltaTime)
+{
+}
+void AMuroCongelado::ejercerAccion()
+{
+}
 void AMuroCongelado::OnCharacterImpact(AActor* CharacterActor)
 {
 	// Implementar el comportamiento específico del muro congelado (ej: ralentizar al personaje)

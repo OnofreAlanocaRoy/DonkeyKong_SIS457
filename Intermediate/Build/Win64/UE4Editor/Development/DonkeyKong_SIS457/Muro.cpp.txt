@@ -1,3 +1,11 @@
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Muro.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Muro.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroElectrico.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroElectrico.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroLadrillo.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroLadrillo.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroPegajodo.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroPegajodo.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroFuego.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroFuego.generated.h

@@ -1,18 +1,23 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Muro.h"
 #include "MuroPegajodo.generated.h"
 
+class UParticleSystemComponent;
 UCLASS()
 class DONKEYKONG_SIS457_API AMuroPegajodo : public AMuro
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+	UParticleSystemComponent* ParticleSystem;
+public:
+	AMuroPegajodo();
 
 public:
-    AMuroPegajodo();
-
-    virtual void OnCharacterImpact(AActor* CharacterActor) override;
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+	virtual void ejercerAccion() override;
 };

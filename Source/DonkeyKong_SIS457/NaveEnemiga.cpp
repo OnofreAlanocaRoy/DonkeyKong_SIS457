@@ -22,6 +22,7 @@ ANaveEnemiga::ANaveEnemiga()
 		// Asegurarse de que la nave ignore los proyectiles
 		CollisionComponent->SetCollisionResponseToChannel(ECC_GameTraceChannel1, ECollisionResponse::ECR_Ignore); // ECC_GameTraceChannel1 sería el canal del proyectil si lo creaste como "Proyectil"
 	}
+	
 }
 
 // Called when the game starts or when spawned

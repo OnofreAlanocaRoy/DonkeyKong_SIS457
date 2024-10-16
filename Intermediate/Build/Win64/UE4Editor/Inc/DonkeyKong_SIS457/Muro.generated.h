@@ -13,31 +13,31 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define DONKEYKONG_SIS457_Muro_generated_h
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_SPARSE_DATA
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_RPC_WRAPPERS
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_RPC_WRAPPERS_NO_PURE_DECLS
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_INCLASS_NO_PURE_DECLS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_SPARSE_DATA
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_RPC_WRAPPERS
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMuro(); \
 	friend struct Z_Construct_UClass_AMuro_Statics; \
 public: \
-	DECLARE_CLASS(AMuro, AActor, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
+	DECLARE_CLASS(AMuro, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
 	DECLARE_SERIALIZER(AMuro)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_INCLASS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesAMuro(); \
 	friend struct Z_Construct_UClass_AMuro_Statics; \
 public: \
-	DECLARE_CLASS(AMuro, AActor, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
+	DECLARE_CLASS(AMuro, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
 	DECLARE_SERIALIZER(AMuro)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_STANDARD_CONSTRUCTORS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMuro(const FObjectInitializer& ObjectInitializer); \
-	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMuro) \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMuro) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AMuro); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMuro); \
 private: \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_ENHANCED_CONSTRUCTORS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMuro(AMuro&&); \
@@ -55,34 +55,31 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AMuro); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMuro); \
-	DEFINE_ABSTRACT_DEFAULT_CONSTRUCTOR_CALL(AMuro)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMuro)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__MuroMesh() { return STRUCT_OFFSET(AMuro, MuroMesh); }
-
-
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_7_PROLOG
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_GENERATED_BODY_LEGACY \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_PRIVATE_PROPERTY_OFFSET
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_PROLOG
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_PRIVATE_PROPERTY_OFFSET \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_SPARSE_DATA \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_RPC_WRAPPERS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_INCLASS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_STANDARD_CONSTRUCTORS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_PRIVATE_PROPERTY_OFFSET \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_SPARSE_DATA \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_RPC_WRAPPERS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_INCLASS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_GENERATED_BODY \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_PRIVATE_PROPERTY_OFFSET \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_SPARSE_DATA \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_INCLASS_NO_PURE_DECLS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_10_ENHANCED_CONSTRUCTORS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_PRIVATE_PROPERTY_OFFSET \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_SPARSE_DATA \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_INCLASS_NO_PURE_DECLS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Muro_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

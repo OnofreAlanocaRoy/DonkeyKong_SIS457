@@ -19,6 +19,7 @@ class DONKEYKONG_SIS457_API AProyectil : public AActor
 
 public:
 	// Sets default values for this actor's properties
+	FVector GunOffset;
 	AProyectil();
 	UFUNCTION()
 	void SetDireccionDisparo(FVector Direccion);
