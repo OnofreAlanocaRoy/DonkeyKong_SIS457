@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{CEE01B7E-83AF-4E37-B7CD-E786C28346B3}</UniqueIdentifier>
+      <UniqueIdentifier>{B81423DC-5459-40EE-8D5B-50D3556619DD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{48B0113A-EC39-49D5-ACA3-8ABF9BF2213D}</UniqueIdentifier>
+      <UniqueIdentifier>{29BF2545-AF5D-492C-B22F-F1A10C240B3A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{E1702CFD-35A0-4B21-B212-37869B225920}</UniqueIdentifier>
+      <UniqueIdentifier>{3C7E5E4B-E863-4F8D-8564-5FFEEE4A0F59}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
@@ -77,6 +77,24 @@
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Enemigo.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\FabricaPosiones.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\FabricaPosiones.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\FabricaPosionesBenignas.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\FabricaPosionesBenignas.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\GameFacade.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\GameFacade.h">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Inventario.cpp">

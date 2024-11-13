@@ -1,0 +1,13 @@
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\FabricaPosionesBenignas.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\FabricaPosiones.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Posion.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Posion.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\FabricaPosiones.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\FabricaPosionesBenignas.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\PosionBenignaSalud.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\PosionBenignaSalud.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\PosionBenignaHabilidad.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\PosionBenignaHabilidad.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\PosionBenignaPoder.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\PosionBenignaPoder.generated.h

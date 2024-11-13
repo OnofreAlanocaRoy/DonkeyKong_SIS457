@@ -1,12 +1,17 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "GameFacade.h"
 #include "DonkeyKong_SIS457GameMode.generated.h"
-
+	
 class AObtaculo;
 class AComponentePlataforma;
 class ADonkeyKong_SIS457Character;
 class ABarril;
 class AMuro;
+class AEnemigo;
+class APlataformaMovil;
+class AEnemigo;
+
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
 {
@@ -15,14 +20,17 @@ class ADonkeyKong_SIS457GameMode : public AGameModeBase
 public:
 
 	ADonkeyKong_SIS457GameMode();
-	ADonkeyKong_SIS457Character* player01;
 
+	ADonkeyKong_SIS457Character* player01;
 	TArray<ABarril*> Barriles;
+	// Método para invocar la generación de enemigos y obstáculos
 
 protected:
 	virtual void BeginPlay() override;
 	TArray<int32> aComponentesPlataformaMoviles;
 	TArray<AMuro*> aMuros;
+	UPROPERTY(EditAnywhere, Category = "Juego")
+	TSubclassOf<AGameFacade> GameFacadeClass;
 private:
 
 	FTimerHandle SpawnBarrilTimerHandle;
@@ -33,5 +41,6 @@ private:
 	void SpawnNaveEnemiga();
 	void SpawnMurosAleatorios();
 
+	AGameFacade* GameFacadeInstance; // Instancia del GameFacade
 
 };

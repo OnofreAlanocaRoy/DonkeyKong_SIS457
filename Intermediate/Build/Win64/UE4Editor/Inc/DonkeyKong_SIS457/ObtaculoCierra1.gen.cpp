@@ -90,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeObtaculoCierra1() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AObtaculoCierra1, 3397578001);
+	IMPLEMENT_CLASS(AObtaculoCierra1, 493720754);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AObtaculoCierra1>()
 	{
 		return AObtaculoCierra1::StaticClass();

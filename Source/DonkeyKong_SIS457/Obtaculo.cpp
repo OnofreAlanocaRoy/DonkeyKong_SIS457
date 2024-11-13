@@ -5,6 +5,7 @@
 AObtaculo::AObtaculo()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	bPuedeSerDestruido = false; // Por defecto no se puede destruir
 }
 void AObtaculo::BeginPlay()
 {

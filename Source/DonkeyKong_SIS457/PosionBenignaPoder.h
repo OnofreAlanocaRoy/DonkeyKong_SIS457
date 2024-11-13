@@ -13,5 +13,9 @@ UCLASS()
 class DONKEYKONG_SIS457_API APosionBenignaPoder : public APosion
 {
 	GENERATED_BODY()
-	
+public:
+	APosionBenignaPoder();
+
+	void BeginPlay() override;
+	void preparar();
 };

@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeobtaculoFuego() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AobtaculoFuego, 2778652014);
+	IMPLEMENT_CLASS(AobtaculoFuego, 1101834420);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AobtaculoFuego>()
 	{
 		return AobtaculoFuego::StaticClass();

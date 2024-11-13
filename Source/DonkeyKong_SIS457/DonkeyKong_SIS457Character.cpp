@@ -66,7 +66,7 @@ void ADonkeyKong_SIS457Character::BeginPlay()
 {
 	Super::BeginPlay();
 	// Reposicionar el personaje en una nueva ubicación al inicio del juego
-	FVector NuevaPosicion = FVector(1190.0f, 1100.0f, 6085.0f); // Cambia estos valores según donde quieras que aparezca tu personaje
+	FVector NuevaPosicion = FVector(1207.272461f, -516.779663f, 204.6241f); // Cambia estos valores según donde quieras que aparezca tu personaje
 	SetActorLocation(NuevaPosicion);
 }
 

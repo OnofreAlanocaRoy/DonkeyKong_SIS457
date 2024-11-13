@@ -13,5 +13,14 @@ UCLASS()
 class DONKEYKONG_SIS457_API APosionBenignaSalud : public APosion
 {
 	GENERATED_BODY()
-	
+public:
+
+	APosionBenignaSalud();
+
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	virtual void preparar() override;
+
 };

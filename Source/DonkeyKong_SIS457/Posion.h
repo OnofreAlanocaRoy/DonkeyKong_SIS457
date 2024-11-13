@@ -16,11 +16,27 @@ public:
 	APosion();
 
 protected:
+	FString nombrePosion;
+	FString viscosidad;
+	FString sangre;
+	TArray<FString> hierbas;
+
+protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	UStaticMeshComponent* pocionMesh;
+
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	virtual void hervir();
+	virtual void burbujear();
+	virtual void preparar();
+	virtual void embotellar();
+
+	FString getNombrePosion();
 
 };

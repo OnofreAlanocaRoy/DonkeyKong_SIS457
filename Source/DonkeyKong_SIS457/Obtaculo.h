@@ -21,7 +21,9 @@ protected:
 public:
 	// Llama a cada fotograma
 	virtual void Tick(float DeltaTime) override;
-
+	// Si el obstáculo puede ser destruido
+	UPROPERTY(EditAnywhere, Category = "Propiedades")
+	bool bPuedeSerDestruido;
 protected:
 	bool subir;
 	FVector posicionInicial;

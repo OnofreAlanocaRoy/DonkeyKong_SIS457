@@ -36,7 +36,7 @@ public: \
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_PosionBenignaPoder_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API APosionBenignaPoder(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API APosionBenignaPoder(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APosionBenignaPoder) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, APosionBenignaPoder); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APosionBenignaPoder); \
@@ -48,8 +48,6 @@ public:
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_PosionBenignaPoder_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API APosionBenignaPoder() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APosionBenignaPoder(APosionBenignaPoder&&); \

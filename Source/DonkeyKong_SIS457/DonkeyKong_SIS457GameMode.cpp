@@ -1,7 +1,6 @@
 //Copyright Epic Games, Inc. All Rights Reserved.
 #include "DonkeyKong_SIS457GameMode.h"
 #include "DonkeyKong_SIS457Character.h"
-#include "UObject/ConstructorHelpers.h"
 #include "Capsula.h"
 #include "ObtaculoCierra1.h"
 #include "obtaculoFuego.h"
@@ -9,6 +8,7 @@
 #include "Obtaculo.h"
 #include "Barril.h"
 #include "NaveEnemiga.h"
+#include "Enemigo.h"
 #include "Muro.h"
 #include "MuroElectrico.h"
 #include "MuroPegajodo.h"
@@ -16,7 +16,10 @@
 #include "MuroCongelado.h"
 #include "Inventario.h"
 #include "MuroFuego.h"
-
+#include "GameFacade.h"
+#include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
+#include "UObject/ConstructorHelpers.h"
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
 	// establecer la clase de peón predeterminada para nuestro personaje con planos
@@ -25,8 +28,10 @@ ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
-	//quiero implementar un nuevo acto NaveEnemiga
+
+	PrimaryActorTick.bCanEverTick = true;
 }
+
 TArray<FVector> GenerarPosicionesAleatorias(int32 NumeroPosiciones, FVector RangoMin, FVector RangoMax)
 {
 	TArray<FVector> PosicionesAleatorias;
@@ -42,11 +47,30 @@ TArray<FVector> GenerarPosicionesAleatorias(int32 NumeroPosiciones, FVector Rang
 
 	return PosicionesAleatorias;
 }
+
 void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 {
 	Super::BeginPlay();
+	// Instanciar GameFacade para manejar la lógica de la generación de enemigos
+	if (GameFacadeClass)
+	{
+		// Instanciar el GameFacade en el mundo
+		GameFacadeInstance = GetWorld()->SpawnActor<AGameFacade>(GameFacadeClass, FVector::ZeroVector, FRotator::ZeroRotator);
 
+		if (GameFacadeInstance)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("GameFacade ha sido instanciado correctamente."));
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No se pudo instanciar el GameFacade."));
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("GameFacadeClass no está asignado en el editor."));
+	}
 	if (GetWorld())
 	{
 		FActorSpawnParameters SpawnParams;
@@ -134,8 +158,8 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	// npp -> Número bucle genera 5 filas (pisos) 
 	for (int npp = 0; npp < 5; npp++) {
 		// desplazamiento aleatorio en las coordenadas Y y Z rango per
-		desplazamientoAleatorio.Z = FMath::RandRange(-maxDesplazamientoZ, maxDesplazamientoZ);
-		desplazamientoAleatorio.Y = FMath::RandRange(-maxDesplazamientoY, maxDesplazamientoY);
+	/*	desplazamientoAleatorio.Z = FMath::RandRange(-maxDesplazamientoZ, maxDesplazamientoZ);
+		desplazamientoAleatorio.Y = FMath::RandRange(-maxDesplazamientoY, maxDesplazamientoY);*/
 		// Aplicamos el desplazamiento a la posición inicial
 		posicionInicial.X += desplazamientoAleatorio.X;
 		posicionInicial.Y += desplazamientoAleatorio.Y;
@@ -226,20 +250,20 @@ void ADonkeyKong_SIS457GameMode::SpawnNaveEnemiga()
 
 void ADonkeyKong_SIS457GameMode::SpawnBarril()
 {
-	//if (barriles.Num() >= numeroMaximoBarriles) {
-	if (contadorBarriles < numeroMaximoBarriles) {
-		//Spawn de un objeto barril en la escena sobre la primera plataforma
-		FTransform SpawnLocationBarril;
-		SpawnLocationBarril.SetLocation(FVector(1160.0f, 900.0f, 860.0f));
-		SpawnLocationBarril.SetRotation(FQuat(FRotator(90.0f, 0.0f, 0.0f)));
-		//ABarril* barril01 = GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocationBarril);
-		Barriles.Add(GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocationBarril));
-		contadorBarriles++;
+	////if (barriles.Num() >= numeroMaximoBarriles) {
+	//if (contadorBarriles < numeroMaximoBarriles) {
+	//	//Spawn de un objeto barril en la escena sobre la primera plataforma
+	//	FTransform SpawnLocationBarril;
+	//	SpawnLocationBarril.SetLocation(FVector(1160.0f, 900.0f, 860.0f));
+	//	SpawnLocationBarril.SetRotation(FQuat(FRotator(90.0f, 0.0f, 0.0f)));
+	//	//ABarril* barril01 = GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocationBarril);
+	//	Barriles.Add(GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocationBarril));
+	//	contadorBarriles++;
 
-		if (contadorBarriles >= numeroMaximoBarriles) {
-			GetWorld()->GetTimerManager().ClearTimer(SpawnBarrilTimerHandle);
-		}
-	}
+	//	if (contadorBarriles >= numeroMaximoBarriles) {
+	//		GetWorld()->GetTimerManager().ClearTimer(SpawnBarrilTimerHandle);
+	//	}
+	//}
 }
 void ADonkeyKong_SIS457GameMode::SpawnMurosAleatorios()
 {

@@ -31,6 +31,11 @@ void EmptyLinkFunctionForGeneratedCodeInventario() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_instanciaInventario_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_instanciaInventario;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +49,15 @@ void EmptyLinkFunctionForGeneratedCodeInventario() {}
 		{ "ModuleRelativePath", "Inventario.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AInventario_Statics::NewProp_instanciaInventario_MetaData[] = {
+		{ "ModuleRelativePath", "Inventario.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventario_Statics::NewProp_instanciaInventario = { "instanciaInventario", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AInventario, instanciaInventario), Z_Construct_UClass_AInventario_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AInventario_Statics::NewProp_instanciaInventario_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AInventario_Statics::NewProp_instanciaInventario_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInventario_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventario_Statics::NewProp_instanciaInventario,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AInventario_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AInventario>::IsAbstract,
 	};
@@ -53,11 +67,11 @@ void EmptyLinkFunctionForGeneratedCodeInventario() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_AInventario_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AInventario_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AInventario_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AInventario_Statics::Class_MetaDataParams))
@@ -71,7 +85,7 @@ void EmptyLinkFunctionForGeneratedCodeInventario() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AInventario, 3322282444);
+	IMPLEMENT_CLASS(AInventario, 1464630014);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AInventario>()
 	{
 		return AInventario::StaticClass();

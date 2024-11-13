@@ -21,8 +21,8 @@ AComponentePlataforma::AComponentePlataforma()
 	posicionFinal = FVector(0.0f, 0.0f, 0.0f);
 	velocidad = 2.0f;
 	anchoComponentePlataforma = 300.0f;
-	altoComponentePlataforma = 50.0f;
-	fondoComponentePlataforma = 200.0f;
+	altoComponentePlataforma = 100.0f;
+	fondoComponentePlataforma = 150.0f;
 
 	desplazamientoComponentePlataforma = FVector(0.0f, 1.0f, 1.0f);
 
