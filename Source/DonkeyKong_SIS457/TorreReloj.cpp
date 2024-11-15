@@ -20,11 +20,11 @@ void ATorreReloj::Tick(float DeltaTime)
 
 void ATorreReloj::IniciarTemporizador()
 {
-	// El reloj va a notificar cada minuto (60 segundos)
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &ATorreReloj::RelojTick, 60.0f, true, 0.0f);
+	// El reloj va a notificar cada minuto (15 segundos)
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &ATorreReloj::RelojTick, 15.0f, true, 0.0f);
 	if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("El reloj va a notificar cada minuto (60 segundos)"));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("El reloj va a notificar cada minuto (15 segundos)"));
 	}
 }
 void ATorreReloj::RelojTick()

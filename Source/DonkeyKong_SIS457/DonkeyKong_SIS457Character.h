@@ -24,6 +24,21 @@ class ADonkeyKong_SIS457Character : public ACharacter
 	void RecibirNotificacion();
 public:
 	ADonkeyKong_SIS457Character();
+	// Decoradores
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Armadura")
+	//UArmadura* Armadura;
+
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Arma")
+	//UArma* Arma;
+
+	// Función para equipar la armadura
+	//UFUNCTION(BlueprintCallable, Category = "Armadura")
+	//void EquiparArmadura();
+
+	//// Función para usar la espada (arma)
+	//UFUNCTION(BlueprintCallable, Category = "Arma")
+	//void UsarEspada();
+
 	UFUNCTION()
 	//llamando para tecla de disparo
 	void Fire();

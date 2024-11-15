@@ -53,9 +53,9 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "//llamando para tecla de disparo\n" },
+		{ "Comment", "//// Funci?n para usar la espada (arma)\n//UFUNCTION(BlueprintCallable, Category = \"Arma\")\n//void UsarEspada();\n//llamando para tecla de disparo\n" },
 		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
-		{ "ToolTip", "llamando para tecla de disparo" },
+		{ "ToolTip", "/ Funci?n para usar la espada (arma)\nUFUNCTION(BlueprintCallable, Category = \"Arma\")\nvoid UsarEspada();\nllamando para tecla de disparo" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADonkeyKong_SIS457Character, nullptr, "Fire", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire_Statics::Function_MetaDataParams)) };
@@ -150,7 +150,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_DonkeyKong_SIS457,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire, "Fire" }, // 2225454489
+		{ &Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire, "Fire" }, // 1459497923
 		{ &Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive, "IsAlive" }, // 728973687
 	};
 #if WITH_METADATA
@@ -253,7 +253,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADonkeyKong_SIS457Character, 2042204848);
+	IMPLEMENT_CLASS(ADonkeyKong_SIS457Character, 3519272823);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<ADonkeyKong_SIS457Character>()
 	{
 		return ADonkeyKong_SIS457Character::StaticClass();

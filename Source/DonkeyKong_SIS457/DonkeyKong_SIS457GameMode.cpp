@@ -54,7 +54,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 {
 	Super::BeginPlay();
-
+	GenerarEnemigos();
 	FTransform SpawnLocationEnemigo;
 	SpawnLocationEnemigo.SetLocation(FVector(1210.f, -2080.f, 1570.f));
 	AEnemigo* enemy2 = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), SpawnLocationEnemigo);
@@ -137,7 +137,6 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 	//spawnear de plataforma
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("-----para disparo tecla R y las fechas (<-  ->)"));
-	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("plataforma aleatorias con Tarray diferente posiciones"));
 	// Generar posiciones aleatorias para las plataformas
 
 	for (int32 i = 0; i < 5; ++i) {
@@ -293,4 +292,47 @@ void ADonkeyKong_SIS457GameMode::SpawnMurosAleatorios()
 	//		}
 	//	}
 	//}
+}void ADonkeyKong_SIS457GameMode::GenerarEnemigos()
+{
+	for (int32 i = 0; i < NumeroEnemigos; i++)
+	{
+		// Validar GetWorld()
+		if (!GetWorld()) continue;
+
+		AEnemigo* EnemigoConcreto = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), SpawnLocation2, SpawnRotation2);
+
+		if (EnemigoConcreto)
+		{
+			int32 EstrategiaSeleccionada = FMath::RandRange(0, 1);
+
+			if (EstrategiaSeleccionada == 0)
+			{
+				UMovimientoLineal* MovimientoLineal = NewObject<UMovimientoLineal>(this);
+				if (MovimientoLineal)
+				{
+					TScriptInterface<IMovimientoStrategy> EstrategiaLineal;
+					EstrategiaLineal.SetObject(MovimientoLineal);
+					EstrategiaLineal.SetInterface(Cast<IMovimientoStrategy>(MovimientoLineal));
+					EnemigoConcreto->SetMovimientoStrategy(EstrategiaLineal);
+				}
+			}
+			else
+			{
+				UMovimientoZigzag* MovimientoZigzag = NewObject<UMovimientoZigzag>(this);
+				if (MovimientoZigzag)
+				{
+					TScriptInterface<IMovimientoStrategy> EstrategiaZigzag;
+					EstrategiaZigzag.SetObject(MovimientoZigzag);
+					EstrategiaZigzag.SetInterface(Cast<IMovimientoStrategy>(MovimientoZigzag));
+					EnemigoConcreto->SetMovimientoStrategy(EstrategiaZigzag);
+				}
+			}
+
+			UE_LOG(LogTemp, Warning, TEXT("Enemigo generado en (%s)"), *SpawnLocation2.ToString());
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No se pudo generar el enemigo en la ubicación (%s)"), *SpawnLocation2.ToString());
+		}
+	}
 }

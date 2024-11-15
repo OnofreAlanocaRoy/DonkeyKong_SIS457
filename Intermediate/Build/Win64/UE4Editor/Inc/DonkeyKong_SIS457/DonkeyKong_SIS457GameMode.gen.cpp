@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_ADonkeyKong_SIS457GameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_DonkeyKong_SIS457();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_AGameFacade_NoRegister();
 // End Cross Module References
 	void ADonkeyKong_SIS457GameMode::StaticRegisterNativesADonkeyKong_SIS457GameMode()
@@ -32,6 +34,18 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NumeroEnemigos_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NumeroEnemigos;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SpawnLocation2_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SpawnLocation2;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SpawnRotation2_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SpawnRotation2;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GameFacade_MetaData[];
 #endif
@@ -53,12 +67,36 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_NumeroEnemigos_MetaData[] = {
+		{ "Category", "Configuraci?n de Enemigos" },
+		{ "ModuleRelativePath", "DonkeyKong_SIS457GameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_NumeroEnemigos = { "NumeroEnemigos", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, NumeroEnemigos), METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_NumeroEnemigos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_NumeroEnemigos_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnLocation2_MetaData[] = {
+		{ "Category", "Configuraci?n de Enemigos" },
+		{ "ModuleRelativePath", "DonkeyKong_SIS457GameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnLocation2 = { "SpawnLocation2", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, SpawnLocation2), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnLocation2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnLocation2_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnRotation2_MetaData[] = {
+		{ "Category", "Configuraci?n de Enemigos" },
+		{ "ModuleRelativePath", "DonkeyKong_SIS457GameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnRotation2 = { "SpawnRotation2", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, SpawnRotation2), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnRotation2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnRotation2_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_GameFacade_MetaData[] = {
 		{ "ModuleRelativePath", "DonkeyKong_SIS457GameMode.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_GameFacade = { "GameFacade", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, GameFacade), Z_Construct_UClass_AGameFacade_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_GameFacade_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_GameFacade_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_NumeroEnemigos,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnLocation2,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_SpawnRotation2,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_GameFacade,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::StaticCppClassTypeInfo = {
@@ -88,7 +126,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADonkeyKong_SIS457GameMode, 1028414075);
+	IMPLEMENT_CLASS(ADonkeyKong_SIS457GameMode, 3175974130);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<ADonkeyKong_SIS457GameMode>()
 	{
 		return ADonkeyKong_SIS457GameMode::StaticClass();

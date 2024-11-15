@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-DonkeyKong_SIS457-0657.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\DonkeyKong_SIS457Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Module.DonkeyKong_SIS457.cpp.obj"
+"C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Module.DonkeyKong_SIS457.gen.cpp.obj"
+"C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Default.rc2.res"
+/OUT:"C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\UE4Editor-DonkeyKong_SIS457-0657.lib"

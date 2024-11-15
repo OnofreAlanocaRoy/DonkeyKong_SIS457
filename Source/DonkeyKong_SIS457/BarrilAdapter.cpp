@@ -9,7 +9,7 @@ ABarrilAdapter::ABarrilAdapter()
     PrimaryActorTick.bCanEverTick = true;
 
     VelocidadMovimiento = 300.0f;
-    DistanciaMaxima = 1000.0f;
+    DistanciaMaxima = 2500.0f;
     bMoviendoHaciaJugador = true;
     DistanciaRecorrida = 0.0f;
 }
@@ -70,7 +70,7 @@ void ABarrilAdapter::MoverHaciaJugador(float DeltaTime)
         }
         else
         {
-            Objetivo = Barril->GetActorLocation() + FVector(1000.0f, 0.0f, 0.0f);
+            Objetivo = Barril->GetActorLocation() + FVector(0.0f, 0.0f, 0.0f);
         }
     }
 }

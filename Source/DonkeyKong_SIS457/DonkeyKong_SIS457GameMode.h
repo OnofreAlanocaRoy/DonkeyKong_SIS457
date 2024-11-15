@@ -1,6 +1,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "GameFacade.h"
+#include "MovimientoLineal.h"
+#include "MovimientoZigzag.h"
 #include "DonkeyKong_SIS457GameMode.generated.h"
 	
 class AObtaculo;
@@ -29,7 +31,16 @@ protected:
 	virtual void BeginPlay() override;
 	TArray<int32> aComponentesPlataformaMoviles;
 	TArray<AMuro*> aMuros;
-	
+
+	void GenerarEnemigos();
+	UPROPERTY(EditAnywhere, Category = "Configuración de Enemigos")
+	int32 NumeroEnemigos = 5;
+
+	UPROPERTY(EditAnywhere, Category = "Configuración de Enemigos")
+	FVector SpawnLocation2 = FVector(2190.0f, -590.0f, 240.0f);
+
+	UPROPERTY(EditAnywhere, Category = "Configuración de Enemigos")
+	FRotator SpawnRotation2 = FRotator::ZeroRotator;
 private:
 	UPROPERTY()
 	AGameFacade* GameFacade;
