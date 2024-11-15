@@ -2,3 +2,5 @@
 
 
 #include "MovimientoStrategy.h"
+
+// Add default functionality here for any IMovimientoStrategy functions that are not pure virtual.

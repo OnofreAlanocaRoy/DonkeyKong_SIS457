@@ -135,6 +135,16 @@ C:\unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\Particles/Emitter.h
 C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Emitter.generated.h
 C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ParticleSystemComponent.generated.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/Decorator_Main.cpp
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Decorator_Main.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Enemigo.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Enemigo.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MovimientoLineal.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MovimientoStrategy.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MovimientoStrategy.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MovimientoLineal.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Decorator_Main.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MovimientoZigzag.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MovimientoZigzag.generated.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/DonkeyKong_SIS457.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\DonkeyKong_SIS457.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/DonkeyKong_SIS457Character.cpp
@@ -166,8 +176,6 @@ C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Proyectil.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Proyectil.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\TorreReloj.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\TorreReloj.generated.h
-C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Enemigo.h
-C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Enemigo.generated.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/DonkeyKong_SIS457GameMode.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\DonkeyKong_SIS457GameMode.h
 C:\unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
@@ -204,6 +212,7 @@ C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyK
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MuroFuego.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\MuroFuego.generated.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/Enemigo.cpp
+C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoBace.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoDecorador.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoDecoradorCircular.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoMelee.cpp
@@ -228,8 +237,9 @@ C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\PosionBenignaPoder.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\PosionBenignaPoder.generated.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/GameFacade.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/Inventario.cpp
+C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/MovimientoLineal.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/MovimientoStrategy.cpp
-C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MovimientoStrategy.h
+C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/MovimientoZigzag.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/Muro.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/MuroCongelado.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/MuroElectrico.cpp

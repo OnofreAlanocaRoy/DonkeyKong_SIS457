@@ -57,7 +57,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	Super::BeginPlay();
 
 	FTransform SpawnLocationEnemigo;
-	SpawnLocationEnemigo.SetLocation(FVector(1200.0f, -1100.0f, 650.0f));
+	SpawnLocationEnemigo.SetLocation(FVector(1200.0f, -1100.0f, 1040.0f));
 	AEnemigo* enemy2 = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), SpawnLocationEnemigo);
 
 	FTransform SpawnLocationDecorador;

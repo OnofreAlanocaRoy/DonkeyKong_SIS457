@@ -85,7 +85,7 @@ public: \
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_9_PROLOG
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_20_GENERATED_BODY_LEGACY \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_12_SPARSE_DATA \
@@ -95,7 +95,7 @@ public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_20_GENERATED_BODY \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_EnemigoDecorador_h_12_SPARSE_DATA \

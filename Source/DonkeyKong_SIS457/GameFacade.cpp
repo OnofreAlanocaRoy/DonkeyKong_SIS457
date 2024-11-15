@@ -4,7 +4,7 @@
 #include "BarrilAdapter.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
-// Constructor
+
 AGameFacade::AGameFacade()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -21,9 +21,9 @@ void AGameFacade::BeginPlay()
 
 void AGameFacade::CrearEnemigos()
 {
-    FVector Ubicacion1(1000.0f, 0.0f, 100.0f);
-    FVector Ubicacion2(1500.0f, 0.0f, 100.0f);
-    FVector Ubicacion3(2000.0f, 0.0f, 100.0f);
+    FVector Ubicacion1(1210.0f, -2360.0f, 400.0f);
+    FVector Ubicacion2(1160.0f, -300.0f, 1570.0f);
+    FVector Ubicacion3(1160.0f, -500.0f, 2530.0f);
 
     FRotator Rotacion(0.0f, 0.0f, 0.0f);
 
@@ -34,17 +34,17 @@ void AGameFacade::CrearEnemigos()
     if (Enemigo1)
     {
         Enemigos.Add(Enemigo1);
-        Enemigo1->EstablecerRangoMovimiento(-500.0f, 500.0f, 12.0f); // Valores de ejemplo para el rango y velocidad
+        Enemigo1->EstablecerRangoMovimiento(-500.0f, 1500.0f, 80.0f); // Valores de ejemplo para el rango y velocidad
     }
     if (Enemigo2)
     {
         Enemigos.Add(Enemigo2);
-        Enemigo2->EstablecerRangoMovimiento(-400.0f, 800.0f, 15.0f); // Valores de ejemplo
+        Enemigo2->EstablecerRangoMovimiento(-400.0f, 800.0f, 100.0f); // Valores de ejemplo
     }
     if (Enemigo3)
     {
         Enemigos.Add(Enemigo3);
-        Enemigo3->EstablecerRangoMovimiento(-600.0f, 1000.0f, 7.0f); // Valores de ejemplo
+        Enemigo3->EstablecerRangoMovimiento(-600.0f, 1000.0f, 50.0f); // Valores de ejemplo
     }
 }
 
@@ -78,9 +78,8 @@ void AGameFacade::DetenerAccionesDeEnemigos()
 void AGameFacade::CrearBarriles()
 {
     // Crear barriles en diferentes ubicaciones
-    FVector Ubicacion1(1000.0f, 0.0f, 100.0f);
-    FVector Ubicacion2(2000.0f, 0.0f, 100.0f);
-    FVector Ubicacion3(1160.0f, 900.0f, 860.0f);
+    FVector Ubicacion1(1206.637085f, 1613.940674f, 400.804321f);
+    FVector Ubicacion2(1200.0f, 2000.0f, 1000.0f);
 
     FRotator Rotacion(90.0f, 0.0f, 0.0f);
     // Barril 1
@@ -113,18 +112,4 @@ void AGameFacade::CrearBarriles()
         }
     }
 
-    // Barril 3
-    ABarril* Barril3 = GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), Ubicacion3, Rotacion);
-    if (Barril3)
-    {
-        Barriles.Add(Barril3);
-
-        ABarrilAdapter* BarrilAdapter3 = GetWorld()->SpawnActor<ABarrilAdapter>(ABarrilAdapter::StaticClass(), Ubicacion3, Rotacion);
-        if (BarrilAdapter3)
-        {
-            BarrilAdapters.Add(BarrilAdapter3);
-            BarrilAdapter3->EstablecerBarril(Barril3);
-            Barril3->EstablecerAdaptador(BarrilAdapter3);
-        }
-    }
 }

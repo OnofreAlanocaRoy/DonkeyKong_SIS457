@@ -13,7 +13,6 @@ class DONKEYKONG_SIS457_API ABarrilAdapter : public AActor
     GENERATED_BODY()
 
 public:
-    // Constructor
     ABarrilAdapter();
 
 protected:

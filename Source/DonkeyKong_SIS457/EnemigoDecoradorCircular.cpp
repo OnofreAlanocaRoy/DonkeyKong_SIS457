@@ -44,7 +44,7 @@ void AEnemigoDecoradorCircular::Tick(float DeltaTime)
 
 void AEnemigoDecoradorCircular::Vigilar()
 {
-    // Iniciar el movimiento circular
+    // Iniciar movimiento circular
     if (Enemigo)
     {
         InitialPosition = Enemigo->GetActorLocation();

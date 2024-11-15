@@ -4,6 +4,7 @@
 #include "DonkeyKong_SIS457Character.h"
 #include "Components/StaticMeshComponent.h"
 #include "TorreReloj.h"
+#include "MovimientoStrategy.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
@@ -23,6 +24,7 @@ AEnemigo::AEnemigo()
     bMoviendo = false; 
 
     DanioBase = 10;  // Valor de daño predeterminado
+	MovimientoStrategy = nullptr;  // Inicializa el puntero de la estrategia de movimiento
 }
 
 void AEnemigo::BeginPlay()
@@ -77,6 +79,12 @@ void AEnemigo::EstablecerRangoMovimiento(float LimiteInferiorY, float LimiteSupe
 void AEnemigo::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime); 
+	// Mover al enemigo según la estrategia de movimiento
+    if (MovimientoStrategy)
+    {
+        MovimientoStrategy->Mover(this, DeltaTime);
+    }
+
     // Verifica si el enemigo debe moverse
     if (bMoviendo)
     {
@@ -104,4 +112,8 @@ void AEnemigo::RecibirNotificacion()
     }
 
     UE_LOG(LogTemp, Warning, TEXT("¡Notificación recibida! El enemigo está reaccionando."));
+}
+void AEnemigo::SetMovimientoStrategy(UMovimientoStrategy* NuevaEstrategia)
+{
+    MovimientoStrategy = NuevaEstrategia;
 }
