@@ -152,10 +152,10 @@ void ADonkeyKong_SIS457Character::VerificarAltura()
 	float AlturaActual = GetActorLocation().Z;
 	if (FMath::Abs(AlturaActual - AlturaAnterior) >= 500.0f)
 	{
-		// Mostrar mensaje en pantalla cuando el jugador avanza en altura
+		// Mostrar mensaje en pantalla cuando el jugador avanza cada 500 unidades en altura
 		if (GEngine)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("¡El jugador ha avanzado en altura!"));
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("¡El jugador ha avanzado en altura!"));
 		}
 
 		AlturaAnterior = AlturaActual;
@@ -171,7 +171,7 @@ void ADonkeyKong_SIS457Character::VerificarEnemigosCercanos()
 	{
 		if (FVector::Dist(GetActorLocation(), Enemigo->GetActorLocation()) <= RadioNotificacion)
 		{
-			// Mostrar mensaje en pantalla cuando un enemigo está cerca
+			// notifica al jugador que un enemigo está cerca a 400 unidades radias
 			if (GEngine)
 			{
 				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("¡Un enemigo está cerca del jugador!"));

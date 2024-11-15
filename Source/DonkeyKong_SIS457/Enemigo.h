@@ -27,7 +27,7 @@ public:
     void EstablecerRangoMovimiento(float LimiteInferiorY, float LimiteSuperiorY, float Velocidad);
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemigo")
-    int DanioBase;  // Daño base del enemigo
+    int DanioBase;  // Daño base enemigo
 
 private:
     FVector DireccionMovimiento;  // Dirección del movimiento

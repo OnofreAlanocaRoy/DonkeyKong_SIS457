@@ -12,9 +12,6 @@ class UEnemigoDecorador : public UInterface
     GENERATED_BODY()
 };
 
-/**
- * Interfaz para los decoradores de enemigos.
- */
 class DONKEYKONG_SIS457_API IEnemigoDecorador
 {
     GENERATED_BODY()

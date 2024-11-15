@@ -77,19 +77,6 @@ void AEnemigo::EstablecerRangoMovimiento(float LimiteInferiorY, float LimiteSupe
 void AEnemigo::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime); 
-
-    // Verificar si el jugador está dentro del radio de 100 unidades
-    ADonkeyKong_SIS457Character* Jugador = Cast<ADonkeyKong_SIS457Character>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-    if (Jugador && FVector::Dist(Jugador->GetActorLocation(), GetActorLocation()) <= 100.0f)
-    {
-        // El enemigo está cerca del jugador
-        UE_LOG(LogTemp, Warning, TEXT("¡Enemigo cerca del jugador!"));
-        if (GEngine)
-        {
-            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("¡Enemigo cerca del jugador!"));
-        }
-    }
-
     // Verifica si el enemigo debe moverse
     if (bMoviendo)
     {

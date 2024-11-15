@@ -19,12 +19,12 @@ protected:
 public:
     virtual void Tick(float DeltaTime) override;
 
-    // Implementación del método de la interfaz
+    // Implementación del método 
     virtual void Vigilar() override;
 
 private:
     float CurrentAngle;
-    const float Radius = 50.0f;
-    const float AngularSpeed = 1.0f;  // Velocidad de rotación en radianes por segundo
+    const float Radius = 150.0f;
+    const float AngularSpeed = 5.0f;  // Velocidad de rotación en radianes por segundo
     FVector InitialPosition;
 };
