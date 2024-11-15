@@ -20,7 +20,8 @@ class ADonkeyKong_SIS457Character : public ACharacter
 	/** Brazo de cámara posicionando la cámara al lado del personaje */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
-
+	// Función que recibe la notificación del reloj
+	void RecibirNotificacion();
 public:
 	ADonkeyKong_SIS457Character();
 	UFUNCTION()
@@ -55,10 +56,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
 	float CurrentHealth = 100.0f;
 
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
-	//TSubclassOf<UUserWidget> HealthBarWidgetClass;
-	//UUserWidget* HealthBarWidget;
-	// Función para determinar si el personaje está vivo
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	bool IsAlive() const;
 	//void TakeDamage(float DamageAmount);
@@ -79,5 +76,10 @@ private:
 	uint32 bCanFire : 1;
 	/** Mango para una gestión eficiente del temporizador ShotTimerExpired */
 	FTimerHandle TimerHandle_ShotTimerExpired;
-
+	//patron observador
+	float AlturaAnterior;
+	float RadioNotificacion;
+	void VerificarAltura();
+	void VerificarEnemigosCercanos();
+	FTimerHandle NotificacionAlturaTimerHandle;
 };

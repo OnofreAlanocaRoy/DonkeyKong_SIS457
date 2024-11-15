@@ -1,6 +1,8 @@
 
 #include "ComponentePlataforma.h"
-
+#include "UObject/ConstructorHelpers.h"
+#include "Components/StaticMeshComponent.h"
+#include "Particles/ParticleSystemComponent.h"
 AComponentePlataforma::AComponentePlataforma()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -21,8 +23,8 @@ AComponentePlataforma::AComponentePlataforma()
 	posicionFinal = FVector(0.0f, 0.0f, 0.0f);
 	velocidad = 2.0f;
 	anchoComponentePlataforma = 300.0f;
-	altoComponentePlataforma = 100.0f;
-	fondoComponentePlataforma = 150.0f;
+	altoComponentePlataforma = 20.0f;
+	fondoComponentePlataforma = 300.0f;
 
 	desplazamientoComponentePlataforma = FVector(0.0f, 1.0f, 1.0f);
 

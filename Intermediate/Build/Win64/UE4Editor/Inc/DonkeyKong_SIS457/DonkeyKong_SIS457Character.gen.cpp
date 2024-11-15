@@ -93,9 +93,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Health" },
-		{ "Comment", "//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"UI\")\n//TSubclassOf<UUserWidget> HealthBarWidgetClass;\n//UUserWidget* HealthBarWidget;\n// Funci?n para determinar si el personaje est? vivo\n" },
 		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
-		{ "ToolTip", "UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"UI\")\nTSubclassOf<UUserWidget> HealthBarWidgetClass;\nUUserWidget* HealthBarWidget;\n Funci?n para determinar si el personaje est? vivo" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADonkeyKong_SIS457Character, nullptr, "IsAlive", nullptr, nullptr, sizeof(DonkeyKong_SIS457Character_eventIsAlive_Parms), Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive_Statics::Function_MetaDataParams)) };
@@ -153,7 +151,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ADonkeyKong_SIS457Character_Fire, "Fire" }, // 2225454489
-		{ &Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive, "IsAlive" }, // 2171717560
+		{ &Z_Construct_UFunction_ADonkeyKong_SIS457Character_IsAlive, "IsAlive" }, // 728973687
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::Class_MetaDataParams[] = {
@@ -255,7 +253,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADonkeyKong_SIS457Character, 3127641403);
+	IMPLEMENT_CLASS(ADonkeyKong_SIS457Character, 2042204848);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<ADonkeyKong_SIS457Character>()
 	{
 		return ADonkeyKong_SIS457Character::StaticClass();

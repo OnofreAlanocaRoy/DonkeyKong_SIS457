@@ -59,7 +59,7 @@ public: \
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457GameMode_h_18_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__GameFacadeClass() { return STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, GameFacadeClass); }
+	FORCEINLINE static uint32 __PPO__GameFacade() { return STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, GameFacade); }
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457GameMode_h_15_PROLOG

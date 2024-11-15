@@ -9,6 +9,9 @@
 #include "Blueprint/UserWidget.h"
 #include "GameFramework/Character.h"
 #include "Proyectil.h"
+#include "TorreReloj.h"
+#include "Enemigo.h"
+#include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 
 //efinir los nombres de las teclas de juego
@@ -56,6 +59,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	GunOffset = FVector(50.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+	RadioNotificacion = 400.0f;  // Ajusta el radio de detección según lo necesario
 }
 // Dispara un tiro en la dirección especificada
 void ADonkeyKong_SIS457Character::ShotTimerExpired()
@@ -68,6 +72,34 @@ void ADonkeyKong_SIS457Character::BeginPlay()
 	// Reposicionar el personaje en una nueva ubicación al inicio del juego
 	FVector NuevaPosicion = FVector(1207.272461f, -516.779663f, 204.6241f); // Cambia estos valores según donde quieras que aparezca tu personaje
 	SetActorLocation(NuevaPosicion);
+	// Crear e inicializar el widget de notificaciones
+	// Suscribir al personaje al reloj
+	AlturaAnterior = GetActorLocation().Z;
+	ATorreReloj* Reloj = Cast<ATorreReloj>(UGameplayStatics::GetActorOfClass(GetWorld(), ATorreReloj::StaticClass()));
+	if (Reloj)
+	{
+		Reloj->AnadirSuscriptor(this);
+	}
+	// Configura el temporizador para llamar a RecibirNotificacion cada 0.5 segundos
+	GetWorld()->GetTimerManager().SetTimer(NotificacionAlturaTimerHandle, this, &ADonkeyKong_SIS457Character::RecibirNotificacion, 0.5f, true);
+}
+void ADonkeyKong_SIS457Character::RecibirNotificacion()
+{
+	// Obtén la altura actual del jugador en el eje Z
+	float AlturaJugador = GetActorLocation().Z;
+
+	// Solo mostrar notificación si el jugador ha alcanzado o superado 1500 unidades en Z
+	if (AlturaJugador >= 1500.0f)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Altura actual del jugador: %f"), AlturaJugador);
+
+		// Mostrar mensaje en pantalla
+		if (GEngine)
+		{
+			FString AlturaMensaje = FString::Printf(TEXT("¡Altura alcanzada! Altura del jugador:" "") , AlturaJugador);
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, AlturaMensaje);
+		}
+	}
 }
 
 void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -109,8 +141,44 @@ void ADonkeyKong_SIS457Character::Fire()
 void ADonkeyKong_SIS457Character::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	VerificarAltura();
+	VerificarEnemigosCercanos();
+	RecibirNotificacion();
+
 }
 
+void ADonkeyKong_SIS457Character::VerificarAltura()
+{
+	float AlturaActual = GetActorLocation().Z;
+	if (FMath::Abs(AlturaActual - AlturaAnterior) >= 500.0f)
+	{
+		// Mostrar mensaje en pantalla cuando el jugador avanza en altura
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("¡El jugador ha avanzado en altura!"));
+		}
+
+		AlturaAnterior = AlturaActual;
+	}
+}
+
+void ADonkeyKong_SIS457Character::VerificarEnemigosCercanos()
+{
+	TArray<AActor*> Enemigos;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemigo::StaticClass(), Enemigos);
+
+	for (AActor* Enemigo : Enemigos)
+	{
+		if (FVector::Dist(GetActorLocation(), Enemigo->GetActorLocation()) <= RadioNotificacion)
+		{
+			// Mostrar mensaje en pantalla cuando un enemigo está cerca
+			if (GEngine)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("¡Un enemigo está cerca del jugador!"));
+			}
+		}
+	}
+}
 void ADonkeyKong_SIS457Character::MoveRight(float Value)
 {
 

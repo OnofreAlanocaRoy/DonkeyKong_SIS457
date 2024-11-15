@@ -1,7 +1,8 @@
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+
 #include "Enemigo.generated.h"
 
 UCLASS()
@@ -10,31 +11,43 @@ class DONKEYKONG_SIS457_API AEnemigo : public AActor
     GENERATED_BODY()
 
 public:
-    // Sets default values for this actor's properties
     AEnemigo();
 
 protected:
     virtual void BeginPlay() override;
 
-public:
+    UStaticMeshComponent* EnemigoMesh; // Debería estar inicializado y configurado correctamente
     virtual void Tick(float DeltaTime) override;
 
-    // Malla est�tica para el enemigo
-    UPROPERTY(VisibleAnywhere, Category = "Mesh")
-    UStaticMeshComponent* EnemigoMesh;
+public:
+    void IniciarAcciones();    // Acción de inicio del enemigo
+    void DetenerAcciones();    // Detiene las acciones del enemigo
+    void MoverEnemigo(float DeltaTime);  // Mueve al enemigo
 
-    // Propiedades para movimiento
-    UPROPERTY(EditAnywhere, Category = "Movimiento")
-    float VelocidadMovimiento = 100.0f;
+    void EstablecerRangoMovimiento(float LimiteInferiorY, float LimiteSuperiorY, float Velocidad);
 
-    UPROPERTY(EditAnywhere, Category = "Movimiento")
-    float LimiteMovimientoY = 500.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemigo")
+    int DanioBase;  // Daño base del enemigo
 
 private:
-    // Direcci�n y posici�n inicial del enemigo
-    FVector DireccionMovimiento;
-    FVector PosicionInicial;
+    FVector DireccionMovimiento;  // Dirección del movimiento
+    float DistanciaRecorrida;  // Distancia recorrida
+    float DistanciaMaxima;  // Distancia máxima de movimiento
+    bool bMoviendo;  // Indica si el enemigo se está moviendo
+    FVector PuntoInicial;  // Punto inicial del movimiento
+    FVector PuntoFinal;  // Punto final del movimiento
+    float VelocidadMovimiento;  // Velocidad del movimiento
+    bool bMoviendoHaciaFinal;  // Dirección de movimiento hacia el final
 
-    // Funci�n para mover al enemigo
-    void MoverEnemigo(float DeltaTime);
+    UPROPERTY(VisibleAnywhere, Category = "Enemigo")
+    UStaticMeshComponent* MeshComponent;  // Componente de la malla del enemigo
+
+    UPROPERTY(EditAnywhere, Category = "Movimiento")
+    float DistanciaMinima = 100.0f;  // Distancia mínima para detener la persecución
+
+    UPROPERTY(EditAnywhere, Category = "Movimiento")
+    float Velocidad = 300.0f;  // Velocidad de persecución
+public:
+    // Función que recibe la notificación del reloj
+    void RecibirNotificacion();
 };

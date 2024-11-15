@@ -8,6 +8,7 @@
 #include "Obtaculo.h"
 #include "Barril.h"
 #include "NaveEnemiga.h"
+#include "EnemigoDecoradorCircular.h"
 #include "Enemigo.h"
 #include "Muro.h"
 #include "MuroElectrico.h"
@@ -19,7 +20,9 @@
 #include "GameFacade.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
+
 #include "UObject/ConstructorHelpers.h"
+
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
 	// establecer la clase de peón predeterminada para nuestro personaje con planos
@@ -28,7 +31,7 @@ ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
-
+	DefaultPawnClass = nullptr;
 	PrimaryActorTick.bCanEverTick = true;
 }
 
@@ -52,30 +55,34 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 {
 	Super::BeginPlay();
-	// Instanciar GameFacade para manejar la lógica de la generación de enemigos
-	if (GameFacadeClass)
-	{
-		// Instanciar el GameFacade en el mundo
-		GameFacadeInstance = GetWorld()->SpawnActor<AGameFacade>(GameFacadeClass, FVector::ZeroVector, FRotator::ZeroRotator);
 
-		if (GameFacadeInstance)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("GameFacade ha sido instanciado correctamente."));
-		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("No se pudo instanciar el GameFacade."));
-		}
-	}
-	else
+	FTransform SpawnLocationEnemigo;
+	SpawnLocationEnemigo.SetLocation(FVector(1200.0f, 1350.0f, 650.0f));
+	AEnemigo* enemy2 = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), SpawnLocationEnemigo);
+
+	FTransform SpawnLocationDecorador;
+	SpawnLocationDecorador.SetLocation(FVector(1200.0f, 1350.0f, 850.0f));
+	AEnemigoDecoradorCircular* decorador = GetWorld()->SpawnActor<AEnemigoDecoradorCircular>(AEnemigoDecoradorCircular::StaticClass(), SpawnLocationDecorador);
+	decorador->Enemigo = enemy2;
+	decorador->Vigilar();
+
+
+	// Crear el Facade de los enemigos
+	GameFacade = GetWorld()->SpawnActor<AGameFacade>(AGameFacade::StaticClass());
+
+	if (GameFacade)
 	{
-		UE_LOG(LogTemp, Error, TEXT("GameFacadeClass no está asignado en el editor."));
+		// Llamar al Facade para crear enemigos
+		GameFacade->CrearEnemigos();
+		// Iniciar las acciones de los enemigos
+		GameFacade->IniciarAccionesDeEnemigos();
 	}
+	
+	//spawnear de capsula
 	if (GetWorld())
 	{
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Owner = this;
-
 		// Definir la ubicación y rotación inicial del actor
 		FVector Location = FVector(1207.272461f, -516.779663f, 104.6241f); // Cambia los valores según la posición deseada
 		FRotator Rotation = FRotator::ZeroRotator;
@@ -95,13 +102,13 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 
 	//spawnear DE CIERRA
-	FVector SpawnLocation = FVector(1189.790527f, -40.001099f, 540.0f); // Posición inicial en el mundo
+	FVector SpawnLocation = FVector(1189.790527f, -40.001099f, 840.0f); // Posición inicial en el mundo
 	AObtaculoCierra1* CierraActor = GetWorld()->SpawnActor<AObtaculoCierra1>(AObtaculoCierra1::StaticClass(), SpawnLocation, SpawnRotation);
 
 	// Ajustar la escala de la sierra (por ejemplo, hacerlo más grande)
 	if (CierraActor)
 	{
-		FVector NewScale = FVector(1.0f, 1.25f, 1.0f); // Escalar en el eje X
+		FVector NewScale = FVector(1.0f, 2.25f, 1.0f); // Escalar en el eje X
 		CierraActor->SetCierraScale(NewScale);
 
 		// Ajustar la rotación de la sierra
@@ -144,7 +151,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	float anchoComponentePlataforma = 300.0f;
 
 	float incrementoAltoComponentePlataforma = 55.0f;
-	float incrementoAltoEntrePisos = 500.0f;
+	float incrementoAltoEntrePisos = 300.0f;
 	float incrementoInicioPiso = 200.0f;
 	float incrementoAnchoComponentePlataforma = -300.0f;
 	int numeroPisoComponentePlataformaMovil = 0;

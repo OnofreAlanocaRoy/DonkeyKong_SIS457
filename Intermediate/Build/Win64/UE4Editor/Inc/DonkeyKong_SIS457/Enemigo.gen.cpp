@@ -33,17 +33,21 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EnemigoMesh_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DanioBase_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EnemigoMesh;
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_DanioBase;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VelocidadMovimiento_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshComponent_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_VelocidadMovimiento;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshComponent;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LimiteMovimientoY_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DistanciaMinima_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_LimiteMovimientoY;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanciaMinima;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Velocidad_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Velocidad;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -59,35 +63,45 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_EnemigoMesh_MetaData[] = {
-		{ "Category", "Mesh" },
-		{ "Comment", "// Malla est?tica para el enemigo\n" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_DanioBase_MetaData[] = {
+		{ "Category", "Enemigo" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_DanioBase = { "DanioBase", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, DanioBase), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_DanioBase_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_DanioBase_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent_MetaData[] = {
+		{ "Category", "Enemigo" },
+		{ "Comment", "// Direcci\xc3\xb3n de movimiento hacia el final\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Enemigo.h" },
-		{ "ToolTip", "Malla est?tica para el enemigo" },
+		{ "ToolTip", "Direcci\xc3\xb3n de movimiento hacia el final" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_EnemigoMesh = { "EnemigoMesh", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, EnemigoMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_EnemigoMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_EnemigoMesh_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent = { "MeshComponent", nullptr, (EPropertyFlags)0x00400000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, MeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadMovimiento_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_DistanciaMinima_MetaData[] = {
 		{ "Category", "Movimiento" },
-		{ "Comment", "// Propiedades para movimiento\n" },
+		{ "Comment", "// Componente de la malla del enemigo\n" },
 		{ "ModuleRelativePath", "Enemigo.h" },
-		{ "ToolTip", "Propiedades para movimiento" },
+		{ "ToolTip", "Componente de la malla del enemigo" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadMovimiento = { "VelocidadMovimiento", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, VelocidadMovimiento), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadMovimiento_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_DistanciaMinima = { "DistanciaMinima", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, DistanciaMinima), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_DistanciaMinima_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_DistanciaMinima_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_LimiteMovimientoY_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData[] = {
 		{ "Category", "Movimiento" },
+		{ "Comment", "// Distancia m\xc3\xadnima para detener la persecuci\xc3\xb3n\n" },
 		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "Distancia m\xc3\xadnima para detener la persecuci\xc3\xb3n" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_LimiteMovimientoY = { "LimiteMovimientoY", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, LimiteMovimientoY), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_LimiteMovimientoY_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_LimiteMovimientoY_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad = { "Velocidad", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Velocidad), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemigo_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_EnemigoMesh,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadMovimiento,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_LimiteMovimientoY,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_DanioBase,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_DistanciaMinima,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemigo_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemigo>::IsAbstract,
@@ -116,7 +130,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigo, 1081340760);
+	IMPLEMENT_CLASS(AEnemigo, 1640138896);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigo>()
 	{
 		return AEnemigo::StaticClass();

@@ -29,18 +29,15 @@ protected:
 	virtual void BeginPlay() override;
 	TArray<int32> aComponentesPlataformaMoviles;
 	TArray<AMuro*> aMuros;
-	UPROPERTY(EditAnywhere, Category = "Juego")
-	TSubclassOf<AGameFacade> GameFacadeClass;
+	
 private:
+	UPROPERTY()
+	AGameFacade* GameFacade;
 
 	FTimerHandle SpawnBarrilTimerHandle;
 	void SpawnBarril();
-	//void DestruirPlataforma();
 	int32 contadorBarriles;
 	const int32 numeroMaximoBarriles = 10;
 	void SpawnNaveEnemiga();
 	void SpawnMurosAleatorios();
-
-	AGameFacade* GameFacadeInstance; // Instancia del GameFacade
-
 };

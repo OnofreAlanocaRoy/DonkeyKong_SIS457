@@ -1,4 +1,4 @@
-
+#pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ComponentePlataforma.generated.h"
@@ -13,7 +13,7 @@ class DONKEYKONG_SIS457_API AComponentePlataforma : public AActor
 public:
 	// Sets default values for this actor's properties
 	AComponentePlataforma();
-
+	UParticleSystemComponent* ParticleSystem;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
