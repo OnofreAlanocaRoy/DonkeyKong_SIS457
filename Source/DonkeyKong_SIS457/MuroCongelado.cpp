@@ -7,7 +7,7 @@ AMuroCongelado::AMuroCongelado()
 	PrimaryActorTick.bCanEverTick = true;
 	ConstructorHelpers::FObjectFinder<UStaticMesh> mesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
 	// Crear el componente de malla estática
-	MuroMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MuroMesh"));
+	MuroMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("NaveMesh"));
 	MuroMesh->SetStaticMesh(mesh.Object);
 	RootComponent = MuroMesh;
 }

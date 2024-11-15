@@ -13,9 +13,7 @@ class UMovimientoStrategy : public UInterface
 	GENERATED_BODY()
 };
 
-/**
- * 
- */
+
 class DONKEYKONG_SIS457_API IMovimientoStrategy
 {
 	GENERATED_BODY()
