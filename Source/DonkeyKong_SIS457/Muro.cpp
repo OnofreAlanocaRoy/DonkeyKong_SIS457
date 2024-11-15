@@ -5,11 +5,13 @@
 #include "MuroLadrillo.h"
 #include "MuroPegajodo.h"
 #include "MuroFuego.h"
+#include "MuroCongelado.h"
 
 
 // Sets default values
 AMuro::AMuro()
 {
+	ConstructorHelpers::FObjectFinder<UStaticMesh> mesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	MuroMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MuroMesh"));
@@ -42,6 +44,7 @@ AMuro* AMuro::getMuro(FString _tipoMuro)
 		return NewObject<AMuroLadrillo>();
 	else if (_tipoMuro == "Fuego")
 		return NewObject<AMuroFuego>();
-	else
+	else if (_tipoMuro == "Fuego")
+		return NewObject<AMuroCongelado>();
 	return nullptr;
 }

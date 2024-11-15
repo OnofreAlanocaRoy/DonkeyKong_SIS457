@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_DonkeyKong_SIS457();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_UMovimientoStrategy_NoRegister();
 // End Cross Module References
 	void AEnemigo::StaticRegisterNativesAEnemigo()
 	{
@@ -48,6 +49,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Velocidad_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Velocidad;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoStrategy_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FInterfacePropertyParams NewProp_MovimientoStrategy;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -97,11 +102,20 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad = { "Velocidad", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Velocidad), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_MovimientoStrategy_MetaData[] = {
+		{ "Comment", "// Velocidad de persecuci\xc3\xb3n\n// Puntero a la estrategia de movimiento\n" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "Velocidad de persecuci\xc3\xb3n\nPuntero a la estrategia de movimiento" },
+	};
+#endif
+	const UE4CodeGen_Private::FInterfacePropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_MovimientoStrategy = { "MovimientoStrategy", nullptr, (EPropertyFlags)0x0044000000000000, UE4CodeGen_Private::EPropertyGenFlags::Interface, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, MovimientoStrategy), Z_Construct_UClass_UMovimientoStrategy_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_MovimientoStrategy_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_MovimientoStrategy_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemigo_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_DanioBase,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_DistanciaMinima,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_MovimientoStrategy,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemigo_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemigo>::IsAbstract,
@@ -130,7 +144,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigo, 1640138896);
+	IMPLEMENT_CLASS(AEnemigo, 1490025747);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigo>()
 	{
 		return AEnemigo::StaticClass();

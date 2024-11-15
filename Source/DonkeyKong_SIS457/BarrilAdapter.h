@@ -4,7 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "BarrilAdapter.generated.h"
 
-// Forward declaration de ABarril
+//declaration de ABarril
 class ABarril;
 
 UCLASS()

@@ -15,7 +15,7 @@ class DONKEYKONG_SIS457_API AEnemigo : public AActor
 public:
     AEnemigo();
 	// Función para establecer la estrategia de movimiento
-    void SetMovimientoStrategy(UMovimientoStrategy* NuevaEstrategia);
+    void SetMovimientoStrategy(TScriptInterface<IMovimientoStrategy> NuevaEstrategia);
     // Función que recibe la notificación del reloj
     void RecibirNotificacion();
 protected:
@@ -54,5 +54,5 @@ private:
     float Velocidad = 300.0f;  // Velocidad de persecución
 	// Puntero a la estrategia de movimiento
     UPROPERTY()
-    UMovimientoStrategy* MovimientoStrategy;
+    TScriptInterface<IMovimientoStrategy> MovimientoStrategy;
 };

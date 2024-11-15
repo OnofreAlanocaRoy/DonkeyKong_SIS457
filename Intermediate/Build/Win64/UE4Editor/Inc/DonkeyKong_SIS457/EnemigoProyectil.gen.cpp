@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoProyectil() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoProyectil, 1311284644);
+	IMPLEMENT_CLASS(AEnemigoProyectil, 3337178325);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigoProyectil>()
 	{
 		return AEnemigoProyectil::StaticClass();

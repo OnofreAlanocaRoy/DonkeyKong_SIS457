@@ -24,7 +24,7 @@ public:
     FVector DireccionMovimiento;   // Dirección en la que el barril se mueve
     float VelocidadMovimiento;     // Velocidad de movimiento
     float DistanciaMaxima;         // Distancia máxima que el barril puede recorrer
-    float DistanciaRecorrida;      // Distancia recorrida por el barril
+    float DistanciaRecorrida;      // Distancia recorrida por el barri
     bool bDetenido;                // Indica si el barril está detenido
 
 protected:

@@ -113,7 +113,7 @@ void AEnemigo::RecibirNotificacion()
 
     UE_LOG(LogTemp, Warning, TEXT("¡Notificación recibida! El enemigo está reaccionando."));
 }
-void AEnemigo::SetMovimientoStrategy(UMovimientoStrategy* NuevaEstrategia)
+void AEnemigo::SetMovimientoStrategy(TScriptInterface<IMovimientoStrategy> NuevaEstrategia)
 {
     MovimientoStrategy = NuevaEstrategia;
 }

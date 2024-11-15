@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoMelee() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoMelee, 1722564574);
+	IMPLEMENT_CLASS(AEnemigoMelee, 912366327);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigoMelee>()
 	{
 		return AEnemigoMelee::StaticClass();

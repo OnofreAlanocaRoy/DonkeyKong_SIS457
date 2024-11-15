@@ -20,7 +20,6 @@
 #include "GameFacade.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
-
 #include "UObject/ConstructorHelpers.h"
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
@@ -57,11 +56,11 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	Super::BeginPlay();
 
 	FTransform SpawnLocationEnemigo;
-	SpawnLocationEnemigo.SetLocation(FVector(1200.0f, -1100.0f, 1040.0f));
+	SpawnLocationEnemigo.SetLocation(FVector(1210.f, -2080.f, 1570.f));
 	AEnemigo* enemy2 = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), SpawnLocationEnemigo);
 
 	FTransform SpawnLocationDecorador;
-	SpawnLocationDecorador.SetLocation(FVector(1200.0f, -1100.0f, 1040.0f));
+	//SpawnLocationDecorador.SetLocation(FVector(1200.0f, -1100.0f, 1540.0f));
 	AEnemigoDecoradorCircular* decorador = GetWorld()->SpawnActor<AEnemigoDecoradorCircular>(AEnemigoDecoradorCircular::StaticClass(), SpawnLocationDecorador);
 	decorador->Enemigo = enemy2;
 	decorador->Vigilar();
@@ -205,7 +204,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	}
 
 	//spawnear muros
-	FVector posicionMuro = FVector(1160.0f, 0.0f, 200.f);
+	FVector posicionMuro = FVector(1206.0f, 1000.0f, 0.0f);
 	FRotator rotacionMuro = FRotator(0.0f, 0.0f, 10.0f);
 	FTransform SpawnLocationMuro;
 	SpawnLocationMuro.SetRotation(FQuat(rotacionMuro));
@@ -214,21 +213,25 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	AMuroElectrico* me01 = GetWorld()->SpawnActor<AMuroElectrico>(AMuroElectrico::StaticClass(), SpawnLocationMuro);
 	aMuros.Add(me01);
 	posicionMuro.Y = 300.0f;
+	posicionMuro.Z = 200.0f;
 	SpawnLocationMuro.SetLocation(posicionMuro);
 
 	AMuroPegajodo* me02 = GetWorld()->SpawnActor<AMuroPegajodo>(AMuroPegajodo::StaticClass(), SpawnLocationMuro);
 	aMuros.Add(me02);
-	posicionMuro.Y = 500.0f;
+	posicionMuro.Y = 400.0f;
+	posicionMuro.Z = 600.0f;
 	SpawnLocationMuro.SetLocation(posicionMuro);
 
 	AMuroLadrillo* me03 = GetWorld()->SpawnActor<AMuroLadrillo>(AMuroLadrillo::StaticClass(), SpawnLocationMuro);
 	aMuros.Add(me03);
-	posicionMuro.Y = 600.0f;
+	posicionMuro.Y = 700.0f;
+	posicionMuro.Z = 1000.0f;
 	SpawnLocationMuro.SetLocation(posicionMuro);
 
 	AMuroFuego* me04 = GetWorld()->SpawnActor<AMuroFuego>(AMuroFuego::StaticClass(), SpawnLocationMuro);
 	aMuros.Add(me04);
-	posicionMuro.Y = 800.0f;
+	posicionMuro.Y = 1000.0f;
+	posicionMuro.Z = 1500.0f;
 	SpawnLocationMuro.SetLocation(posicionMuro);
 
 

@@ -29,7 +29,6 @@ void ABarril::Tick(float DeltaTime)
         FVector NuevaPosicion = GetActorLocation() + DireccionMovimiento * DeltaTime * VelocidadMovimiento;
         SetActorLocation(NuevaPosicion);
         DistanciaRecorrida += FVector::Dist(GetActorLocation(), NuevaPosicion);
-
         // Detenerlo al alcanzar la distancia máxima
         if (DistanciaRecorrida >= DistanciaMaxima)
         {
@@ -55,7 +54,6 @@ void ABarril::EstablecerAdaptador(ABarrilAdapter* NuevoAdaptador)
 //#include "Barril.h"
 //
 //
-//// Sets default values
 //ABarril::ABarril()
 //{
 //	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.

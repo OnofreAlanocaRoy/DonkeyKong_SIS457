@@ -61,7 +61,8 @@ public: \
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__MeshComponent() { return STRUCT_OFFSET(AEnemigo, MeshComponent); } \
 	FORCEINLINE static uint32 __PPO__DistanciaMinima() { return STRUCT_OFFSET(AEnemigo, DistanciaMinima); } \
-	FORCEINLINE static uint32 __PPO__Velocidad() { return STRUCT_OFFSET(AEnemigo, Velocidad); }
+	FORCEINLINE static uint32 __PPO__Velocidad() { return STRUCT_OFFSET(AEnemigo, Velocidad); } \
+	FORCEINLINE static uint32 __PPO__MovimientoStrategy() { return STRUCT_OFFSET(AEnemigo, MovimientoStrategy); }
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_10_PROLOG

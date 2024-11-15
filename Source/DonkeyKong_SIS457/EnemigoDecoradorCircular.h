@@ -24,7 +24,7 @@ public:
 
 private:
     float CurrentAngle;
-    const float Radius = 150.0f;
-    const float AngularSpeed = 5.0f;  // Velocidad de rotación en radianes por segundo
+    const float Radius = 350.0f;
+    const float AngularSpeed = 3.0f;  // Velocidad de rotación en radianes por segundo
     FVector InitialPosition;
 };

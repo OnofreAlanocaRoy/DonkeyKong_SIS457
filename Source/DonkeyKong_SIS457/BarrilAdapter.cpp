@@ -3,7 +3,7 @@
 #include "DonkeyKong_SIS457Character.h"
 #include "Kismet/GameplayStatics.h"
 
-// Constructor
+// Constructo
 ABarrilAdapter::ABarrilAdapter()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -32,7 +32,7 @@ void ABarrilAdapter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (Barril && !Barril->bDetenido) // Si el barril no está detenido, lo movemos
+    if (Barril && !Barril->bDetenido) // Si el barril no está detenido lo movemos
     {
         MoverHaciaJugador(DeltaTime);
     }
