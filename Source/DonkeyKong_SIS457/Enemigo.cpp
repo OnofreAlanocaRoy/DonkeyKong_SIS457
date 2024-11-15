@@ -73,9 +73,8 @@ void AEnemigo::EstablecerRangoMovimiento(float LimiteInferiorY, float LimiteSupe
     PuntoFinal = PuntoInicial;
     PuntoFinal.Y += FMath::RandRange(LimiteInferiorY, LimiteSuperiorY); // Establece un punto final aleatorio en Y
     VelocidadMovimiento = Velocidades;
-    bMoviendoHaciaFinal = true; // Comienza moviéndose hacia el punto final
+    bMoviendoHaciaFinal = true; // Comienza el movimiento
 }
-
 void AEnemigo::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime); 

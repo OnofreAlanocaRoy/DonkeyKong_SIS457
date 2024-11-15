@@ -18,11 +18,8 @@ void ADecorator_Main::BeginPlay()
 
     for (int32 i = 0; i < NumeroEnemigos; i++)
     {
-        // Generar posición aleatoria para cada enemigo
-        FVector SpawnLocation = FVector(
-            FMath::RandRange(-1000.0f, 1000.0f), // Rango aleatorio para X
-            FMath::RandRange(-500.0f, 500.0f),     // Rango aleatorio para Y 
-            202.112915f);// Altura constante
+        // Generar posición específica para cada enemigo
+        FVector SpawnLocation = FVector(2190.0f, -590.0f, 240.0f); // Nueva posición específica
         FRotator SpawnRotation = FRotator::ZeroRotator;
 
         // Validar GetWorld()
@@ -69,6 +66,10 @@ void ADecorator_Main::BeginPlay()
             UE_LOG(LogTemp, Warning, TEXT("Enemigo generado en (%s) con estrategia: %s"),
                 *SpawnLocation.ToString(),
                 EstrategiaSeleccionada == 0 ? TEXT("Lineal") : TEXT("Zigzag"));
+        }
+        else
+        {
+            UE_LOG(LogTemp, Error, TEXT("No se pudo generar el enemigo en la ubicación (%s)"), *SpawnLocation.ToString());
         }
     }
 }
