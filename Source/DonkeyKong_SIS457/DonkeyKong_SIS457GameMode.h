@@ -25,8 +25,11 @@ public:
 
 	ADonkeyKong_SIS457Character* player01;
 	TArray<ABarril*> Barriles;
-	// Método para invocar la generación de enemigos y obstáculos
 
+	 // Contenedor para almacenar las hordas
+	TMap<FString, TArray<AEnemigoPrototipo*>> Hordas;
+	// Método para generar hordas
+	void GenerarHordas();
 protected:
 	virtual void BeginPlay() override;
 	TArray<int32> aComponentesPlataformaMoviles;

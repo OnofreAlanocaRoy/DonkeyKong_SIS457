@@ -10,6 +10,7 @@
 #include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoDecorador.gen.cpp"
 #include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoDecoradorCircular.gen.cpp"
 #include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoMelee.gen.cpp"
+#include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoPrototipo.gen.cpp"
 #include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoProyectil.gen.cpp"
 #include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/FabricaPosiones.gen.cpp"
 #include "C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/FabricaPosionesBenignas.gen.cpp"

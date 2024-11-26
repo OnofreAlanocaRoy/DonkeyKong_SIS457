@@ -15,7 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 // Cross Module References
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_AEnemigo_NoRegister();
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_AEnemigo();
-	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_AEnemigoPrototipo();
 	UPackage* Z_Construct_UPackage__Script_DonkeyKong_SIS457();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_UMovimientoStrategy_NoRegister();
@@ -58,7 +58,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_AEnemigo_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_AActor,
+		(UObject* (*)())Z_Construct_UClass_AEnemigoPrototipo,
 		(UObject* (*)())Z_Construct_UPackage__Script_DonkeyKong_SIS457,
 	};
 #if WITH_METADATA
@@ -144,7 +144,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigo, 1490025747);
+	IMPLEMENT_CLASS(AEnemigo, 3268689003);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<AEnemigo>()
 	{
 		return AEnemigo::StaticClass();

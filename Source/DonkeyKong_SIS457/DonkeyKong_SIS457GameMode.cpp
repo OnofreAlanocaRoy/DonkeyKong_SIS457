@@ -50,10 +50,47 @@ TArray<FVector> GenerarPosicionesAleatorias(int32 NumeroPosiciones, FVector Rang
 	return PosicionesAleatorias;
 }
 
+void ADonkeyKong_SIS457GameMode::GenerarHordas()
+{
+	UWorld* World = GetWorld();
+	if (!World) return;
+
+	// Crear el prototipo base
+	AEnemigo* PrototipoBase = World->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), FVector(2210.0f, -1460.0f, 190.0f), FRotator::ZeroRotator);
+
+	if (!PrototipoBase) return;
+
+	for (int32 i = 0; i < 3; i++) // Tres hordas
+	{
+		FString HordaNombre = FString::Printf(TEXT("Horda_%d"), i + 1);
+		TArray<AEnemigoPrototipo*> Horda;
+
+		for (int32 j = 0; j < 5; j++) // Cinco enemigos por horda
+		{
+			FVector SpawnOffset = FVector(j * 150.0f, i * 200.0f, 0.0f);
+			AEnemigoPrototipo* Clonado = PrototipoBase->Clonar();
+
+			if (Clonado)
+			{
+				Clonado->SetActorLocation(PrototipoBase->GetActorLocation() + SpawnOffset);
+				Horda.Add(Clonado);
+			}
+		}
+		Hordas.Add(HordaNombre, Horda);
+	}
+
+	// Eliminar el prototipo base
+	if (PrototipoBase)
+	{
+		PrototipoBase->Destroy();
+	}
+}
+
 void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 {
 	Super::BeginPlay();
+	GenerarHordas();
 	GenerarEnemigos();
 	FTransform SpawnLocationEnemigo;
 	SpawnLocationEnemigo.SetLocation(FVector(1210.f, -2080.f, 1570.f));

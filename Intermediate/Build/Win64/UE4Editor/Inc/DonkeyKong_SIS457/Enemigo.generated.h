@@ -13,28 +13,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define DONKEYKONG_SIS457_Enemigo_generated_h
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_SPARSE_DATA
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_RPC_WRAPPERS
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_INCLASS_NO_PURE_DECLS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_SPARSE_DATA
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_RPC_WRAPPERS
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemigo(); \
 	friend struct Z_Construct_UClass_AEnemigo_Statics; \
 public: \
-	DECLARE_CLASS(AEnemigo, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
+	DECLARE_CLASS(AEnemigo, AEnemigoPrototipo, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
 	DECLARE_SERIALIZER(AEnemigo)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_INCLASS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesAEnemigo(); \
 	friend struct Z_Construct_UClass_AEnemigo_Statics; \
 public: \
-	DECLARE_CLASS(AEnemigo, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
+	DECLARE_CLASS(AEnemigo, AEnemigoPrototipo, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/DonkeyKong_SIS457"), NO_API) \
 	DECLARE_SERIALIZER(AEnemigo)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_STANDARD_CONSTRUCTORS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEnemigo(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemigo) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_ENHANCED_CONSTRUCTORS \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEnemigo(AEnemigo&&); \
@@ -58,34 +58,34 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEnemigo)
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_PRIVATE_PROPERTY_OFFSET \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__MeshComponent() { return STRUCT_OFFSET(AEnemigo, MeshComponent); } \
 	FORCEINLINE static uint32 __PPO__DistanciaMinima() { return STRUCT_OFFSET(AEnemigo, DistanciaMinima); } \
 	FORCEINLINE static uint32 __PPO__Velocidad() { return STRUCT_OFFSET(AEnemigo, Velocidad); } \
 	FORCEINLINE static uint32 __PPO__MovimientoStrategy() { return STRUCT_OFFSET(AEnemigo, MovimientoStrategy); }
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_10_PROLOG
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_GENERATED_BODY_LEGACY \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_11_PROLOG
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_PRIVATE_PROPERTY_OFFSET \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_SPARSE_DATA \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_RPC_WRAPPERS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_INCLASS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_STANDARD_CONSTRUCTORS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_PRIVATE_PROPERTY_OFFSET \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_SPARSE_DATA \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_RPC_WRAPPERS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_INCLASS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_GENERATED_BODY \
+#define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_PRIVATE_PROPERTY_OFFSET \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_SPARSE_DATA \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_INCLASS_NO_PURE_DECLS \
-	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_13_ENHANCED_CONSTRUCTORS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_PRIVATE_PROPERTY_OFFSET \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_SPARSE_DATA \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_INCLASS_NO_PURE_DECLS \
+	DonkeyKong_SIS457_Source_DonkeyKong_SIS457_Enemigo_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

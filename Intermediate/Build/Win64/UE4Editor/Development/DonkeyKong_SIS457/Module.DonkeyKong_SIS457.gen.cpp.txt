@@ -130,6 +130,8 @@ C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerSta
 C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\GameFacade.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Enemigo.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\EnemigoPrototipo.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoPrototipo.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Enemigo.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\GameFacade.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\MovimientoLineal.h
@@ -149,6 +151,7 @@ C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyK
 C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoMelee.gen.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457/EnemigoMelee.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoMelee.generated.h
+C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoPrototipo.gen.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Intermediate/Build/Win64/UE4Editor/Inc/DonkeyKong_SIS457/EnemigoProyectil.gen.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457/EnemigoProyectil.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoProyectil.generated.h

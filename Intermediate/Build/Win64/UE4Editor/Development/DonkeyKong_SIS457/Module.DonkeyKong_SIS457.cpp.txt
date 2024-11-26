@@ -1,8 +1,6 @@
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/ArmaDecorator.cpp
-C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\ArmaDecorator.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/ArmaduraDecorator.cpp
-C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\ArmaduraDecorator.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/Barril.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Barril.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\BarrilAdapter.h
@@ -171,7 +169,10 @@ C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyK
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\TorreReloj.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\TorreReloj.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Enemigo.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\EnemigoPrototipo.h
+C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoPrototipo.generated.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Enemigo.generated.h
+C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\PersonajeBase.h
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/DonkeyKong_SIS457GameMode.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\DonkeyKong_SIS457GameMode.h
 C:\unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
@@ -220,6 +221,7 @@ C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoDecoradorCircu
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoMelee.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\EnemigoMelee.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoMelee.generated.h
+C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoPrototipo.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/EnemigoProyectil.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\EnemigoProyectil.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoProyectil.generated.h
@@ -254,6 +256,7 @@ C:\unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Projectil
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/Obtaculo.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/ObtaculoCierra1.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/obtaculoFuego.cpp
+C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/PersonajeBase.cpp
 C:/unreal/juego/DonkeyKong_SIS457/Source/DonkeyKong_SIS457/PersonajeDecorator.cpp
 C:\unreal\juego\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\PersonajeDecorator.h
 C:\unreal\juego\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\PersonajeDecorator.generated.h

@@ -11,6 +11,7 @@
 #include "Proyectil.h"
 #include "TorreReloj.h"
 #include "Enemigo.h"
+#include "PersonajeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 
@@ -60,9 +61,6 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	FireRate = 0.1f;
 	bCanFire = true;
 	RadioNotificacion = 400.0f;  // Ajusta el radio de detección según lo necesario
-	// Inicializar los decoradores (armadura y arma)
-	/*Armadura = CreateDefaultSubobject<UArmadura>(TEXT("Armadura"));
-	Arma = CreateDefaultSubobject<UArma>(TEXT("Espada"));*/
 
 }
 // Dispara un tiro en la dirección especificada
@@ -73,12 +71,13 @@ void ADonkeyKong_SIS457Character::ShotTimerExpired()
 void ADonkeyKong_SIS457Character::BeginPlay()
 {
 	Super::BeginPlay();
-	// Equipar la armadura al inicio
-	//EquiparArmadura();
+	// Crear y usar decoradores
+	/*APersonajeBase* PersonajeBase = NewObject<APersonajeBase>();
+	PersonajeBase->EquiparDecoradores();*/
 	// Reposicionar el personaje en una nueva ubicación al inicio del juego
 	FVector NuevaPosicion = FVector(1207.272461f, -516.779663f, 204.6241f); // Cambia estos valores según donde quieras que aparezca tu personaje
 	SetActorLocation(NuevaPosicion);
-	// Crear e inicializar el widget de notificaciones
+	
 	// Suscribir al personaje al reloj
 	AlturaAnterior = GetActorLocation().Z;
 	ATorreReloj* Reloj = Cast<ATorreReloj>(UGameplayStatics::GetActorOfClass(GetWorld(), ATorreReloj::StaticClass()));
@@ -121,8 +120,7 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
 	// Vincula la acción de disparo al método Fire
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::Fire);
-	// Asociar la acción de atacar con la espada
-	/*PlayerInputComponent->BindAction("Ataque", IE_Pressed, this, &ADonkeyKong_SIS457Character::UsarEspada);*/
+
 }
 // Dispara un proyectil en la dirección especificada
 void ADonkeyKong_SIS457Character::Fire()
@@ -221,14 +219,3 @@ bool ADonkeyKong_SIS457Character::IsAlive() const
 	return CurrentHealth > 0.0f;
 }
 
-//void ADonkeyKong_SIS457Character::EquiparArmadura()
-//{
-//	// Equipar la armadura
-//	Armadura->Equipar();
-//}
-//
-//void ADonkeyKong_SIS457Character::UsarEspada()
-//{
-//	// Realizar el ataque con la espada
-//	Arma->Atacar();
-//}

@@ -2,13 +2,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "EnemigoPrototipo.h"
 #include "Enemigo.generated.h"
 
 class IMovimientoStrategy;
 
 
 UCLASS()
-class DONKEYKONG_SIS457_API AEnemigo : public AActor
+class DONKEYKONG_SIS457_API AEnemigo : public AEnemigoPrototipo
 {
     GENERATED_BODY()
 
@@ -18,6 +19,8 @@ public:
     void SetMovimientoStrategy(TScriptInterface<IMovimientoStrategy> NuevaEstrategia);
     // Función que recibe la notificación del reloj
     void RecibirNotificacion();
+    //
+    virtual AEnemigoPrototipo* Clonar() override;
 protected:
     virtual void BeginPlay() override;
 
